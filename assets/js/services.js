@@ -1,0 +1,67 @@
+'use strict';
+
+//  SETTER AND GETTER FOR THE REQUESTOR ///////////////////////////////////////////////////////////
+angular.module('RFIapp.services', [])
+
+.factory('ServicesFtry', function() {
+
+    var requestorInfo = {};
+
+    var setRequestor = function(requestor) {
+        requestorInfo = requestor;
+     };
+
+    var getRequestor = function() {
+        return requestorInfo;
+     }; 
+    return {
+          setRequestor: setRequestor,
+        getRequestor: getRequestor
+    };
+})
+
+//  DATA FACTORY ///////////////////////////////////////////////////////////
+.factory('DataFtry', [ '$http' , '$q' , 'RFIConfig',   function($http, $q, RFIConfig) {
+
+  var getData = function(url){
+    var $promise =  $http({
+        method: 'GET',
+        url:  url,
+        headers: {'Content-Type': 'application/json'}
+      });
+      var deferred = $q.defer();
+      $promise.then(function(result){
+        if(result.statusText == 'OK'){
+          deferred.resolve(result);
+        } else {
+          alert('Woops something wen wrong with the AJAX call');
+        }
+      });
+      return deferred.promise;
+    };
+
+  var sendData = function(url, data){
+
+    var $promise =  $http({
+      method: 'POST',
+      url:  url,
+      headers: {'Content-Type': 'application/json'},
+      data: data
+    });
+    var deferred = $q.defer();
+    $promise.then(function(result){
+
+      if(result.data.status == 'SUCCESS'){
+        deferred.resolve(result.data.message);
+        } else {
+          alert('Woops something wen wrong with the AJAX call');
+        }
+      });
+      return deferred.promise;
+    };
+
+    return {
+      getData   : getData,
+      sendData  : sendData
+  };
+}]);

@@ -1,0 +1,73 @@
+
+.baseText(@font-color: @basetextcolordark) {
+	font-size: @basefontsize;
+	letter-spacing: 0.03em;
+	font-family: @basefont;
+	color: @font-color;
+	text-decoration:none;
+}
+
+
+.labelText {
+	.baseText;
+	font-size:1em;
+	color: @labeltextcolor;
+}
+
+.summaryLabel {
+	.baseText;
+	font-size:1.1em;
+	color: @labeltextcolor;
+}
+
+
+.labelText-small{
+	.baseText;
+	font-size:.9em;
+	color: @basefont;
+}
+
+.headerLabel{
+	.baseText;
+	font-size:.9em;
+	letter-spacing: 0em;
+	color: #758098;
+	margin-right: 10px;
+
+}
+
+
+.captionText{
+	.baseText;
+	font-size:.8em;
+	color: @titlegray;
+}
+
+
+p {
+	.baseText;
+}
+
+.baseLinkText {
+	.baseText;
+	font-size:1em;
+	color: @basetexthover;
+}
+
+.errorMessage {
+	.baseText;
+	font-size:1em;
+	color: @errormessage;
+}
+
+.white-title(@font-size: 20){
+	display: block;
+	font-family: @basefont;
+	//font-family: 'amaranth';
+	vertical-align : middle;
+	@rem: (@font-size / 10);
+	font-size : @font-size * 1px;
+	font-size : ~"@{rem}rem"; 
+	padding: 5px 10px 5px 10px;
+}
+

@@ -1,0 +1,120 @@
+    <section class="requestor" ng-model="requestor">
+<!--     INTERNAL REQUESTOR   ////////////////////////////////////////////////////////////////////////////////////// -->
+     <!--   <div id="internalRequestor">
+          <div class="sub-title" >Internal Requestor</div> -->
+        <div class="row ">
+            <div class="col-sm-4 form-group">
+                <label  >Department:</label>
+                <input type="text" ng-model="requestor.department" class="form-control"  >
+            </div>
+
+            <div class="col-sm-4 form-group">
+                <label >Title:</label>
+                <input type="text" ng-model="requestor.title" class="form-control"  />
+            </div>
+
+            <div class="col-sm-3 form-group">
+                <label >Contact Number:</label>
+                <input type="text" ng-model="requestor.phoneNumber" class="form-control" />
+            </div>
+             <div class="col-sm-1 form-group">
+                <span class="add-btn"><a href="" ng-click="addNumber = true"></a></span>         
+            </div>
+        </div>
+
+         <div class="row" ng-show="addNumber">
+             <div class="col-sm-8 form-group"></div>
+             <div class="col-sm-3 form-group">
+                <label >Cell Phone:</label>
+                <input type="text" ng-model="requestor.cellNumber" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+        <div class="row">
+            <div class="col-sm-4 form-group">
+                <label >First Name:</label>
+                <input type="text" ng-model="requestor.firstName" class="form-control"   />
+            </div>
+
+            <div class="col-sm-4 form-group">
+                <label  >Last Name:</label>
+                <input type="text" ng-model="requestor.lastName" class="form-control" id="reqLasNam" />
+            </div>
+            
+            <div class="col-sm-4 form-group">
+                <label  >Email:</label>
+                <input type="text" ng-model="requestor.email" class="form-control" id="reqEma" />
+            </div>
+        </div>
+    </div>
+</section>
+ <!--     EXTERNAL REQUESTOR   ////////////////////////////////////////////////////////////////////////////////////// -->
+ <ext-requestor-dir></ext-requestor-dir>
+
+<!--    CASE    ////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="sub-title">Case</div>
+<div class="row">
+    <div class="col-sm-3 form-group show-hide" ng-show="!NCMECcaseFlag">
+        <input type="text" id="caseNumber" class="form-control" ng-model="caseDto.caseId">
+    </div>
+    <div class="col-sm-2 form-group" ng-show="!NCMECcaseFlag" >
+        <button class="btn-primary"  ng-click="getCase()">LOAD CASE</button>
+    </div >
+    <div class="col-sm-3 form-group">
+        <label>
+            <span style="font-weight:bold" class="show-hide" ng-show="!NCMECcaseFlag">OR: </span><input type="checkbox" id="NCMECcase" ng-model="NCMECcaseFlag" ng-click=" isNCMECCcase()"> Non-NCMEC case?
+        </label>
+    </div>
+    <div class="col-sm-3 form-group show-hide" ng-show="NCMECcaseFlag">
+        <span style="color:#758098; font-weight:bold">UHR: </span>
+        <label>
+            <input type="radio" value="true" ng-model="UHR.value"> Yes 
+        </label>
+         <label>
+            <input type="radio" value="false" ng-model="UHR.value"> No 
+        </label>
+    </div>
+    <div class="col-sm-3 form-group">
+        <label>
+          <input type="checkbox" ng-model="caseDto.isCST"> CST at Risk?
+        </label>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-2 form-group" >
+        <label >Select a Priority:</label>
+        <select class="form-control" ng-model="requestor.priority" id="selectPriority">
+            <option value="lowPriority">Low Priority</option>
+            <option value="routine">Routine</option>
+            <option value="priority">Priority</option>
+            <option value="immediate">Immediate</option>
+            <option value="specificDate">Specific Date</option>
+        </select>
+    </div>
+    <div class="col-sm-2 form-group show-hide"  ng-show="requestor.priority=='specificDate'">
+        <label>Select a Date:</label>
+            <input type="text" class="form-control "ng-model="requestor.requestDate" datepicker />
+             </div>
+               <div class="col-sm-8 form-group" >
+        <label style="font-style: italic; margin-top:27px ">Low Priority = 1week  |  Routine = 3 days  |  Priority = 24hrs  |  Immediate = ASAP  |  Specific Date = Selected Date</label>
+   
+    </div>
+</div>
+
+<!--     SEARCHES    ////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="sub-title">Searches</div>
+<div class="row">
+    <div class="col-sm-3 form-group" ng-repeat="search in requestorCheckbox">
+        <label >
+            <input type="checkbox"  ng-checked="requestor.searches.indexOf(search.code) != -1" ng-click="toggleCheck(search, requestor.searches)">
+            {{search.displayTxt}}
+        </label>
+    </div>
+    <div class="col-sm-12 form-group">
+                <label for="reqCom">Comment:</label>
+                <textarea type="text" ng-model="requestor.comment" class="form-control" id="reqCom" ></textarea>
+            </div>
+</div>
+
+

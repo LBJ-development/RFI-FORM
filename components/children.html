@@ -1,0 +1,230 @@
+<form id="childrenForm" role="form">
+    <section class="children" ng-repeat="child in childrenList track by $index">
+      <div ng-show="$index >0"  class="pers-sep"></div>
+<!-- NAMES ///////////////////////////////////////////////////////////////////////////// -->
+
+ <div class="sub-title">Child {{$index + 1}}
+        <div style="float: right">
+            <label>
+                <input type="checkbox" ng-model="child.person.isSearchable"><span class="headerLabel"> Conduct Searches</span>
+            </label>
+            <label>
+                <input type="checkbox" ng-model="child.person.isInReport"><span class="headerLabel">  Include in Report </span>
+            </label>
+        </div>
+   </div>
+        <section class="name" ng-repeat="name in child.person.names track by $index">
+            <div class="row ">
+                <div class="col-sm-4 form-group">
+                    <label>First Name: </label>
+                    <input type="text" class="form-control" ng-model="child.person.names[$index].firstName" />
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label>Middle Name: </label>
+                    <input type="text" class="form-control" ng-model="child.person.names[$index].middleName" />
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label>Last Name: </label>
+                    <input type="text" class="form-control" ng-model="child.person.names[$index].lastName" />
+                </div>
+                <div class="col-sm-1 form-group">
+                      <span class="add-btn"><a href="" ng-click="addObjectToList(child.person.names, $index)"></a></span>
+                    <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(child.person.names, $index)"></a></span>
+                </div>
+            </div>
+        </section>
+<!-- NICKNAMES ///////////////////////////////////////////////////////////////////////////// -->
+         <div class="row ">
+            <div class="col-sm-4 form-group">
+                <label>Nick Name: </label>
+                <input type="text" class="form-control" ng-model="child.person.nickName" />
+            </div>
+             <div class="col-sm-4 form-group">
+                <label>Gender: </label>
+                <input type="text" class="form-control" ng-model="child.person.gender" />
+            </div>
+<!-- SSN  ///////////////////////////////////////////////////////////////////////////// -->
+            <section class="ssn" ng-repeat="ssn in child.person.ssns track by $index">
+                <div class="col-sm-3 form-group">
+                    <label>SSN: </label>
+                    <input type="text" class="form-control"  ng-model="child.person.ssns[$index]" />
+                </div>
+                    <div class="col-sm-1 form-group">
+                        <span class="add-btn"><a href="" ng-click="addToList(child.person.ssns, $index)"></a></span>
+                        <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(child.person.ssns, $index)"></a></span>
+                    </div>
+             </section>
+<!-- BIRTHDAY ///////////////////////////////////////////////////////////////////////////// -->
+                <section class="birthday"  ng-repeat="bday in child.person.birthDates track by $index">
+                <div class="col-sm-3 form-group">
+                    <label>Birthday: </label>
+                    <input type="text" class="form-control" ng-model="child.person.birthDates[$index]" datepicker />
+                </div>
+                    <div class="col-sm-1 form-group">
+                        <span class="add-btn"><a href="" ng-click="addToList(child.person.birthDates, $index)"></a></span>
+                        <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(child.person.birthDates, $index)"></a></span>
+                    </div>
+             </section>
+<!-- EMAIL  ///////////////////////////////////////////////////////////////////////////// -->
+                <section class="birthday"  ng-repeat="email in child.emails track by $index">
+                <div class="col-sm-3 form-group">
+                    <label>Email: </label>
+                    <input type="text" class="form-control" ng-model="child.emails[$index]" />
+                </div>
+                    <div class="col-sm-1 form-group">
+                        <span class="add-btn"><a href="" ng-click="addToList(child.emails, $index)"></a></span>
+                        <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(child.emails, $index)"></a></span>
+                    </div>
+             </section>
+<!-- CELL PHONE  ///////////////////////////////////////////////////////////////////////////// -->
+              <section class="birthday"  ng-repeat="cellphone in child.person.cellPhones track by $index">
+                <div class="col-sm-3 form-group">
+                    <label>Cell Phone: </label>
+                    <input type="text" class="form-control" ng-model="child.person.cellPhones[$index]" />
+                </div>
+                    <div class="col-sm-1 form-group">
+                        <span class="add-btn"><a href="" ng-click="addToList(child.person.cellPhones, $index)"></a></span>
+                        <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(child.person.cellPhones, $index)"></a></span>
+                    </div>
+             </section>
+        </div>
+
+<!-- PHYSICAL FEATURES  ///////////////////////////////////////////////////////////////////////////// -->
+        <div class="sub-title">Physical Features</div>
+        <div class="row">
+
+           <div class="col-sm-4 form-group">
+                <label>Weight Range (lbs): </label>
+                <input type="text" class="form-control"  ng-model="child.weightRange.value"/>
+            </div>
+            <div class="col-sm-4 form-group">
+                <label>Height Range (ft/in): </label>
+                <input type="text" class="form-control"  ng-model="child.heightRange.value"/>
+            </div>
+            <div class="col-sm-4 form-group">
+                <label>Age Range: </label>
+                <input type="text" class="form-control"  ng-model="child.ageRange.value"/>
+            </div>
+
+            <section class="scarMarkPhysicalFeature" ng-repeat="smpf in child.scarMarkPhysicalFeatures track by $index">
+                <div class="col-sm-3 form-group" >
+                     <label>Select a Feature: </label>
+                    <select class="form-control " ng-options="type.value as type.value for type in physicalTypeDropdown" ng-model="smpf.lookup.value" >
+                    </select>
+                </div>
+                <div class="col-sm-8 form-group" >
+                       <label>Description: </label>
+                    <input type="text" class="form-control" ng-model="smpf.description"/>
+                 </div>
+
+                 <div class="col-sm-1 form-group">
+                        <span class="add-btn"><a href="" ng-click="addObjectToList(child.scarMarkPhysicalFeatures, $index)"></a></span>
+                        <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(child.scarMarkPhysicalFeatures, $index)"></a></span>
+                     </div>
+            </section>
+        </div>
+ <!-- ONLINE ACTIVITIES  ///////////////////////////////////////////////////////////////////////////// -->   
+        <div class="sub-title">Online Activities</div>
+
+        <div class="row">
+            <section class="onlineActivity" ng-repeat="online in child.onlineActivities track by $index">
+                <div class="col-sm-3 form-group" >
+                     <label>Activity type: </label>
+                    <select class="form-control "ng-options="type.code as type.value for type in onlineActivityDropdown" ng-model="online.lookup.value">
+                    </select>
+                </div>
+                <div class="col-sm-3 form-group" >
+                       <label>URL: </label>
+                        <input type="text" class="form-control" ng-model="online.url"/>
+                 </div>
+                    <div class="col-sm-2 form-group" >
+                       <label>Website: </label>
+                        <input type="text" class="form-control" ng-model="online.website"/>
+                 </div>
+
+                  <div class="col-sm-3 form-group" >
+                       <label>Description: </label>
+                        <input type="text" class="form-control" ng-model="online.description"/>
+                 </div>
+
+                 <div class="col-sm-1 form-group">
+                        <span class="add-btn"><a href="" ng-click="addObjectToList(child.onlineActivities, $index)"></a></span>
+                        <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(child.onlineActivities, $index)"></a></span>
+                    </div>
+            </section>
+        </div>
+<!-- MISSING LOCATION  ///////////////////////////////////////////////////////////////////////////// -->   
+        <div class="sub-title">Missing Location</div>
+        <div class="row">
+            <section class="location" ng-repeat="location in child.missingLocations track by $index">
+                <div class="col-sm-3 form-group" >
+                     <label>Address: </label>
+                      <input type="text" class="form-control" ng-model="location.streetAddress" />
+   
+                </div>
+                <div class="col-sm-3 form-group" >
+                       <label>City: </label>
+                        <input type="text" class="form-control" ng-model="location.city"/>
+                 </div>
+                    <div class="col-sm-2 form-group" >
+                       <label>State: </label>
+                        <input type="text" class="form-control" ng-model="location.state"/>
+                 </div>
+
+                  <div class="col-sm-3 form-group" >
+                       <label>Zip: </label>
+                        <input type="text" class="form-control" ng-model="location.zip"/>
+                 </div>
+
+                 <div class="col-sm-1 form-group">
+                        <span class="add-btn"><a href="" ng-click="addObjectToList(child.missingLocations, $index)"></a></span>
+                        <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(child.missingLocations, $index)"></a></span>
+                    </div>
+            </section>
+        </div>
+<!-- MISSING DATE  ///////////////////////////////////////////////////////////////////////////// -->   
+        <div class="sub-title">Missing Date</div>
+        <div class="row">
+            <section class="missingDate" ng-repeat="missingDate in child.missingDates track by $index">
+                <div class="col-sm-3 form-group" >
+                     <label>Select a Date: </label>
+                      <input type="text" class="form-control" ng-model="child.missingDates[$index]" datepicker/>
+   
+                </div>
+                 <div class="col-sm-1 form-group">
+                        <span class="add-btn"><a href=""  ng-click="addToList(child.missingDates, $index)"></a></span>
+                        <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(child.missingDates, $index)"></a></span>
+                    </div>
+            </section>
+        </div>
+        <div class="h-sep" style="margin:10px 0 20px 0"  ng-show="!child.person.isSearchable && child.person.isNew[$index]"></div>
+<!-- SEARCHES  ///////////////////////////////////////////////////////////////////////////// -->   
+        <div class="sub-title" ng-show="child.person.isSearchable">Searches</div>
+        <div class="row" ng-show="child.person.isSearchable">
+            <div class="col-sm-3 form-group" ng-repeat="search in childCheckbox">
+                <label >
+                    <input type="checkbox"  ng-checked="child.searches.indexOf(search.code) != -1" ng-click="toggleCheck(search, child.searches)">
+                     {{search.displayTxt}}
+                </label>
+            </div>
+        </div>
+<!-- COMMENTS  ///////////////////////////////////////////////////////////////////////////// -->           
+        <div class="row" ng-show="child.person.isSearchable">
+            <div class="col-sm-12 form-group">
+                <label >Comment:</label>
+                <textarea type="text" ng-model="child.comments" class="form-control" ></textarea>
+            </div>
+        </div>
+
+
+<div ng-show="child.person.isNew[$index]"><button class="btn-primary" ng-click="removeFromList(childrenList, $index)">REMOVE THIS CHILD</button></div>
+</section>
+
+
+<!-- 
+</section>
+
+
+<button ng-click="addChild()">Add child</button> -->
+</form>
+

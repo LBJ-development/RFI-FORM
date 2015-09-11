@@ -1,0 +1,105 @@
+
+<div  style="margin:10px 0 20px 0" >
+	<img ng-show="!isSearchable" src="assets/images/attention-icn.png"/ style="padding-right: 10px">
+	<span ng-show="!isSearchable" class="errorMessage" >At least one person need to be included in the search request.</span>
+</div>
+
+<!-- CHILDREN SUMMARY  ///////////////////////////////////////////////////////////////////////////// -->
+<div ng-show="childrenList.length >0" class="sub-title">Child<span ng-show="childrenList.length >1">ren</span></div>
+<section  ng-show="childrenList.length >0" class="children" ng-repeat="child in childrenList track by $index">
+	<div class="row ">
+		<div class="col-sm-4 form-group">
+			<p class="summaryLabel">{{child.person.names[0].firstName + " " + child.person.names[0].lastName}}</p> 
+		</div>
+
+		<div class="col-sm-4 form-group">
+			<img ng-show="child.person.isSearchable && child.searches.length > 0" src="assets/images/checkmark-icn.png"/>
+			<img ng-show="!child.person.isSearchable" src="assets/images/uncheckmark-icn.png"/>
+			<img ng-show="child.person.isSearchable && child.searches.length == 0" src="assets/images/attention-icn.png"/>
+			<span ng-hide="child.person.isSearchable && child.searches.length == 0" class="labelText">Searchable</span>
+			<span ng-show="child.person.isSearchable && child.searches.length == 0" class="errorMessage">SELECT A SEARCH </span>
+		</div>
+		<div class="col-sm-4 form-group">
+			 <label>
+                <input type="checkbox" ng-model="child.person.isInReport">
+                <span class="labelText">  Include in Report </span>
+            </label>
+		</div>
+	</div>
+</section>
+
+<!-- CSAW SUMMARY  ///////////////////////////////////////////////////////////////////////////// -->
+<div ng-show="csawList.length >0" class="sub-title">CSAW<span ng-show="csawList.length >1">s</span></div>
+<section  ng-show="csawList.length >0" class="children" ng-repeat="csaw in csawList track by $index">
+	<div class="row ">
+		<div class="col-sm-4 form-group">
+			<span class="summaryLabel">{{csaw.person.names[0].firstName + " " + csaw.person.names[0].lastName}}</span> 
+		</div>
+
+		<div class="col-sm-4 form-group">
+			<img ng-show="csaw.person.isSearchable && csaw.searches.length > 0" src="assets/images/checkmark-icn.png"/>
+			<img ng-show="!csaw.person.isSearchable" src="assets/images/uncheckmark-icn.png"/>
+			<img ng-show="csaw.person.isSearchable && csaw.searches.length == 0" src="assets/images/attention-icn.png"/>
+			<span ng-hide="csaw.person.isSearchable && csaw.searches.length == 0" class="labelText">Searchable</span>
+			<span ng-show="csaw.person.isSearchable && csaw.searches.length == 0" class="errorMessage">SELECT A SEARCH </span>
+		</div>
+		<div class="col-sm-4 form-group">
+			 <label>
+                <input type="checkbox" ng-model="csaw.person.isInReport">
+                <span class="labelText">  Include in Report </span>
+            </label>
+		</div>
+	</div>
+</section>
+
+<!-- GUARDIAN SUMMARY  ///////////////////////////////////////////////////////////////////////////// -->
+<div ng-show="guardianList.length >0" class="sub-title">Guardian<span ng-show="guardianList.length >1">s</span></div>
+<section  ng-show="guardianList.length >0" class="children" ng-repeat="guardian in guardianList track by $index">
+	<div class="row ">
+		<div class="col-sm-4 form-group">
+			<span class="summaryLabel">{{guardian.person.names[0].firstName + " " + guardian.person.names[0].lastName}}</span> 
+		</div>
+
+		<div class="col-sm-4 form-group">
+			<img ng-show="guardian.person.isSearchable && guardian.searches.length > 0" src="assets/images/checkmark-icn.png"/>
+			<img ng-show="!guardian.person.isSearchable" src="assets/images/uncheckmark-icn.png"/>
+			<img ng-show="guardian.person.isSearchable && guardian.searches.length == 0" src="assets/images/attention-icn.png"/>
+			<span ng-hide="guardian.person.isSearchable && guardian.searches.length == 0" class="labelText">Searchable</span>
+			<span ng-show="guardian.person.isSearchable && guardian.searches.length == 0" class="errorMessage">SELECT A SEARCH </span>
+		</div>
+		<div class="col-sm-4 form-group">
+			 <label>
+                <input type="checkbox" ng-model="guardian.person.isInReport">
+                <span class="labelText">  Include in Report </span>
+            </label>
+		</div>
+	</div>
+</section>
+
+<!-- UHR SUMMARY  ///////////////////////////////////////////////////////////////////////////// -->
+<div ng-show="uhrList.length >0" class="sub-title">UHR<span ng-show="uhrList.length >1">s</span></div>
+<section  ng-show="uhrList.length >0" class="children" ng-repeat="uhr in uhrList track by $index">
+	<div class="row ">
+		<div class="col-sm-4 form-group">
+			<span class="summaryLabel">{{uhr.person.names[0].firstName + " " + uhr.person.names[0].lastName}}</span> 
+
+		</div>
+
+		<div class="col-sm-4 form-group">
+			<img ng-show="uhr.person.isSearchable && uhr.searches.length > 0" src="assets/images/checkmark-icn.png"/>
+			<img ng-show="!uhr.person.isSearchable" src="assets/images/uncheckmark-icn.png"/>
+			<img ng-show="uhr.person.isSearchable && uhr.searches.length == 0" src="assets/images/attention-icn.png"/>
+			<span ng-hide="uhr.person.isSearchable && uhr.searches.length == 0" class="labelText">Searchable</span>
+			<span ng-show="uhr.person.isSearchable && uhr.searches.length == 0" class="errorMessage">SELECT A SEARCH </span>
+		</div>
+		<div class="col-sm-4 form-group">
+			 <label>
+                <input type="checkbox" ng-model="uhr.person.isInReport">
+                <span class="labelText">  Include in Report </span>
+            </label>
+		</div>
+	</div>
+</section>
+
+
+          

@@ -1,0 +1,112 @@
+<div ng-controller="ctrl"  class="content-wrapper" context-path="${cp}">
+
+<!-- REQUESTOR  //////////////////////////////////////////////////////// -->
+    <div class="tabHead">
+        <span class="tab-title">Requestor</span>
+    </div>
+    <div class="tabWrapper" style="opacity: 1; display:inline-block">
+        <div ui-view="requestor"></div>
+    </div>   
+
+<!-- CHILDREN  //////////////////////////////////////////////////////// -->
+    <div class="tabHead show-hide" ng-show="UHR.value!='true'">
+        <span class="tab-title " >Children ({{childrenList.length}})</span>
+        <ul>
+            <li id="closeChild-btn"  ng-show="childrenList.length>0" class="tab-btn openPanel-btn"><a href=""  ng-click="closeOpenPanel('#closeChild-btn' ,'#panelChild')">Open</a></li>
+            <li class="tab-sep"></li>
+             <li class="tab-btn addPers-btn"><a href="" ng-click="addChild()" >Add a Child</a></li>
+            <li class="tab-sep"></li>
+        </ul>
+    </div>
+    <div id="panelChild" class="tabWrapper show-hide" ng-show="UHR.value!='true'" >
+        <div ui-view="children"></div>
+    </div> 
+
+<!-- CSAW  //////////////////////////////////////////////////////// -->
+    <div class="tabHead" >
+        <span class="tab-title">CSAW  ({{csawList.length}})</span>
+         <ul>
+            <li id="closeCSAW-btn"  ng-show="csawList.length>0" class="tab-btn openPanel-btn"><a href=""  ng-click="closeOpenPanel('#closeCSAW-btn' ,'#panelCSAW')">Open</a></li>
+            <li class="tab-sep"></li>
+             <li class="tab-btn addPers-btn"><a href="" ng-click="addCsaw()" >Add a CSAW</a></li>
+            <li class="tab-sep"></li>
+        </ul>
+    </div>
+    <div id="panelCSAW" class="tabWrapper">
+        <div ui-view="CSAW"></div>
+    </div>      
+
+<!-- GUARDIAN  //////////////////////////////////////////////////////// -->
+    <div class="tabHead show-hide" ng-show="UHR.value!='true'">
+        <span class="tab-title">Guardian ({{guardianList.length}})</span>
+        <ul>
+            <li id="closeGuardian-btn"  ng-show="guardianList.length>0" class="tab-btn openPanel-btn"><a href=""  ng-click="closeOpenPanel('#closeGuardian-btn' ,'#panelGuardian')">Open</a></li>
+            <li class="tab-sep"></li>
+             <li class="tab-btn addPers-btn"><a href="" ng-click="addGuardian()" >Add a Guardian</a></li>
+            <li class="tab-sep"></li>
+        </ul>
+    </div>
+    <div id="panelGuardian"  class="tabWrapper show-hide" ng-show="UHR.value!='true'">
+        <div ui-view="guardian"></div>
+    </div>      
+          
+<!-- URH  //////////////////////////////////////////////////////// -->
+    <div class="tabHead show-hide" ng-show="UHR.value=='true'">
+        <span class="tab-title">UHR ({{uhrList.length}})</span>
+        <ul>
+            <li id="closeUHR-btn"  ng-show="uhrList.length>0" class="tab-btn openPanel-btn"><a href=""  ng-click="closeOpenPanel('#closeUHR-btn' ,'#panelUHR')">Open</a></li>
+            <li class="tab-sep"></li>
+             <li class="tab-btn addPers-btn"><a href="" ng-click="addUhr()" >Add an UHR</a></li>
+            <li class="tab-sep"></li>
+        </ul>
+    </div>
+    <div id="panelUHR" class="tabWrapper show-hide" ng-show="UHR.value=='true'">
+        <div ui-view="UHR"></div>
+    </div>    
+      
+<!-- BOTTOM  //////////////////////////////////////////////////////// -->
+    <div id="bottom">
+        <div>
+         <!--    <button style="float:right; margin:20px 20px 20px 0" class="btn-primary" ng-click="sendRequest()">SUBMIT REQUEST</button> -->
+            <button style="float:right; margin:20px 20px 20px 0" class="btn-primary" data-toggle="modal" data-target="#myModal" ng-click="isPersonInSearch()">VIEW SUMMARY</button>
+        </div>
+        <div style="display:inline-block; margin:10px;  width:50%;">
+            <label>
+ <!--            <div class="sub-title">Drop File:</div>
+ -->
+          <div style="display:inline-block; position: relative; float: left">
+                <div ngf-drop ngf-select ng-model="files" class="drop-box" ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf" style="font-weight:bold">Drop pdfs or images here or click to upload</div>
+                <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+            </div>
+                <div style="display:inline-block; position: relative; float: left; padding:10px 0 0 10px">
+                <span>Files:</span>
+                    <ul>
+                        <li ng-repeat="f in files" style="font:smaller">{{f.name}}</li>
+                    </ul>
+                <span>Upload Log:<span>
+                <pre>{{log}}</pre>
+            </div>
+            </label>
+        </div>
+    </div>
+
+<!-- MODAL POPUP  //////////////////////////////////////////////////////// -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog"  style="width:700px">
+    
+      <!-- Modal content-->
+            <div class="modal-content">
+
+                <span class="panel-header"><span class="white-title">RFI summary</span></span>
+                <div class="modal-body">
+                    <summary-dir> </summary-dir>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" style="margin-right:20px" class="btn-primary" data-dismiss="modal"> CANCEL </button>
+                        <button type="button" ng-class="buttonClass" data-dismiss="modal" ng-disabled="!isSearchable" ng-click="sendRequest()"> SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

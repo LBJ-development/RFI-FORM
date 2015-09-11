@@ -1,0 +1,156 @@
+<form role="form">
+    <section class="urh" ng-repeat="uhr in uhrList track by $index">
+        <div ng-show="$index >0"  class="pers-sep"></div>
+<!-- TITLE ///////////////////////////////////////////////////////////////////////////// -->
+        <div class="sub-title">UHR {{$index + 1}}
+            <div style="float: right">
+                <label>
+                    <input type="checkbox" ng-model="uhr.person.isSearchable"><span class="headerLabel"> Conduct Searches</span>
+                </label>
+                <label>
+                    <input type="checkbox" ng-model="uhr.person.isInReport"><span class="headerLabel">  Include in Report </span>
+             </label>
+            </div>
+        </div>
+<!-- NAMES ///////////////////////////////////////////////////////////////////////////// -->
+        <section class="name" ng-repeat="name in uhr.person.names track by $index">
+            <div class="row ">
+                <div class="col-sm-4 form-group">
+                    <label>First Name: </label>
+                    <input type="text" class="form-control" ng-model="uhr.person.names[$index].firstName" />
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label>Middle Name: </label>
+                    <input type="text" class="form-control" ng-model="uhr.person.names[$index].middleName" />
+                </div>
+                <div class="col-sm-3 form-group">
+                    <label>Last Name: </label>
+                    <input type="text" class="form-control" ng-model="uhr.person.names[$index].lastName" />
+                </div>
+                <div class="col-sm-1 form-group">
+                      <span class="add-btn"><a href="" ng-click="addObjectToList(uhr.person.names, $index)"></a></span>
+                    <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(uhr.person.names, $index)"></a></span>
+                </div>
+            </div>
+        </section>
+        <div class="row ">
+            <div class="col-sm-4 form-group">
+                <label>Gender: </label>
+                <input type="text" class="form-control"  ng-model="uhr.person.gender"/>
+            </div>
+            <div class="col-sm-4 form-group">
+                <label>Race: </label>
+                <input type="text" class="form-control"  ng-model="uhr.person.race"/>
+            </div>
+            <div class="col-sm-4 form-group">
+                <label>Namus #: </label>
+                <input type="text" class="form-control"  ng-model="uhr.namus"/>
+            </div>
+      <!--       <div class="col-sm-4 form-group">
+                <label>Eye Color: </label>
+                <input type="text" class="form-control"  ng-model="uhr.eyeColor"/>
+            </div>
+            <div class="col-sm-4 form-group">
+                <label>Hair Color: </label>
+                <input type="text" class="form-control"  ng-model="uhr.hairColor"/>
+            </div> -->
+           
+        </div>
+
+<!-- PHYSICAL FEATURES  ///////////////////////////////////////////////////////////////////////////// -->
+        <div class="sub-title">Physical Features</div>
+        <div class="row">
+            <div class="col-sm-4 form-group">
+                <label>Weight Range (lbs): </label>
+                <input type="text" class="form-control"  ng-model="uhr.weightRange"/>
+            </div>
+            <div class="col-sm-4 form-group">
+                <label>Height Range (ft/in): </label>
+                <input type="text" class="form-control"  ng-model="uhr.heightRange"/>
+            </div>
+            <div class="col-sm-4 form-group">
+                <label>Age Range: </label>
+                <input type="text" class="form-control"  ng-model="uhr.ageRange"/>
+            </div>
+            <section class="scarMarkPhysicalFeature" ng-repeat="smpf in uhr.scarMarkPhysicalFeatures track by $index">
+                <div class="col-sm-3 form-group" >
+                     <label>Select a Feature: </label>
+                    <select class="form-control " ng-options="type.value as type.value for type in physicalTypeDropdown" ng-model="smpf.lookup.value" >
+                    </select>
+                </div>
+                <div class="col-sm-8 form-group" >
+                       <label>Description: </label>
+                    <input type="text" class="form-control" ng-model="smpf.description"/>
+                 </div>
+
+                 <div class="col-sm-1 form-group">
+                        <span class="add-btn"><a href="" ng-click="addObjectToList(uhr.scarMarkPhysicalFeatures, $index)"></a></span>
+                        <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(uhr.scarMarkPhysicalFeatures, $index)"></a></span>
+                     </div>
+            </section>
+        </div>
+
+<!-- BODY FOUND  ///////////////////////////////////////////////////////////////////////////// -->       
+        <div class="sub-title">Body Found Info</div>
+        <div class="row">
+            <section class="birthday"  ng-repeat="bday in uhr.person.birthDates track by $index">
+                <div class="col-sm-3 form-group">
+                    <label>Date Found: </label>
+                    <input type="text" class="form-control" ng-model="uhr.person.birthDates[$index]" datepicker />
+                </div>
+                    <div class="col-sm-1 form-group">
+                        <span class="add-btn"><a href="" ng-click="addToList(uhr.person.birthDates, $index)"></a></span>
+                        <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(uhr.person.birthDates, $index)"></a></span>
+                    </div>
+            </section>
+        </div>
+<!-- LOCATION FOUND  ///////////////////////////////////////////////////////////////////////////// --> 
+        <div class="sub-title">Location Found</div>
+        <div class="row">
+            <section class="location" ng-repeat="location in uhr.foundLocations track by $index">
+                <div class="col-sm-3 form-group" >
+                     <label>Address: </label>
+                      <input type="text" class="form-control" ng-model="location.streetAddress" />
+                </div>
+                <div class="col-sm-3 form-group" >
+                       <label>City: </label>
+                        <input type="text" class="form-control" ng-model="location.city"/>
+                 </div>
+                    <div class="col-sm-2 form-group" >
+                       <label>State: </label>
+                        <input type="text" class="form-control" ng-model="location.state"/>
+                 </div>
+
+                  <div class="col-sm-3 form-group" >
+                       <label>Zip: </label>
+                        <input type="text" class="form-control" ng-model="location.zip"/>
+                 </div>
+                 <div class="col-sm-1 form-group">
+                        <span class="add-btn"><a href="" ng-click="addObjectToList(uhr.foundLocations, $index)"></a></span>
+                        <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(uhr.foundLocations, $index)"></a></span>
+                </div>
+            </section>
+        </div>
+        <div class="h-sep" style="margin:10px 0 20px 0" ng-show="!uhr.person.isSearchable && uhr.person.isNew[$index]"></div>
+<!-- SEARCHES  ///////////////////////////////////////////////////////////////////////////// -->   
+        <div class="sub-title" ng-show="uhr.person.isSearchable">Searches</div>
+        <div class="row" ng-show="uhr.person.isSearchable">
+            <div class="col-sm-3 form-group"  ng-repeat="search in  uhrCheckbox">
+                <label >
+                    <input type="checkbox"  ng-checked="uhr.searches.indexOf(search.code) != -1" ng-click="toggleCheck(search, uhr.searches)">
+                     {{search.displayTxt}}
+                </label>
+            </div>
+        </div>
+<!-- COMMENTS  ///////////////////////////////////////////////////////////////////////////// -->         
+        <div class="row" ng-show="uhr.person.isSearchable">
+            <div class="col-sm-12 form-group">
+                <label >Comment:</label>
+                <textarea type="text" ng-model="uhr.comments" class="form-control" ></textarea>
+            </div>
+        </div>
+        <div ng-show="uhr.person.isNew[$index]">
+            <button class="btn-primary" ng-click="removeFromList(uhrList, $index)">REMOVE THIS UHR</button>
+        </div>
+    </section>
+</form>

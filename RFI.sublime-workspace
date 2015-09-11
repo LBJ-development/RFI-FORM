@@ -1,0 +1,562 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ng-sh",
+				"ng-show	AngularJS"
+			],
+			[
+				"fon",
+				"font-style"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"ma",
+				"margin-bottom"
+			],
+			[
+				"radi",
+				"radioBtnUAC"
+			],
+			[
+				"check",
+				"checkedIds"
+			],
+			[
+				"ch",
+				"checkDateFormating"
+			],
+			[
+				"subm",
+				"submitSearch"
+			],
+			[
+				"re",
+				"repeat-x"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"casemana",
+				"casemanagement-menu"
+			],
+			[
+				"focu",
+				"focusout	.focusout()"
+			],
+			[
+				"mou",
+				"mouseleave	.mouseleave()"
+			],
+			[
+				"head",
+				"head-menu"
+			],
+			[
+				"case",
+				"casesearch"
+			],
+			[
+				"see",
+				"selected"
+			],
+			[
+				"scro",
+				"scrollable"
+			],
+			[
+				"naa",
+				"narrativeType"
+			],
+			[
+				"narra",
+				"narrativeType"
+			],
+			[
+				"det",
+				"detailRow"
+			],
+			[
+				"detail",
+				"detailGridOptions"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Create Package File"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"INS",
+				"Package Control: Install Package"
+			],
+			[
+				"install p",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 269.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/workingProgress-D/RFI/RFI-FORM/rfi.html",
+		"/D/workingProgress-D/RFI/RFI-FORM/components/form.html",
+		"/D/workingProgress-D/RFI/RFI-FORM/components/requestor.html",
+		"/D/workingProgress-D/RFI/RFI-FORM/components/summary.html",
+		"/D/workingProgress-D/RFI/RFI-FORM/assets/js/rfi.js",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/shared/dateRange-O.js",
+		"/D/workingProgress-D/RFI/RFI-FORM/components/children.html",
+		"/D/workingProgress-D/RFI/RFI-FORM/assets/js/summaryCtrl.js",
+		"/D/workingProgress-D/RFI/RFI-FORM/assets/less/RFI-typography.less",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/caseManagement/caseManagementCtrl.js",
+		"/C/Users/ljablonski/Desktop/rfi.js",
+		"/C/Users/ljablonski/Desktop/form.html",
+		"/C/Users/ljablonski/Desktop/requestor.html",
+		"/D/workingProgress-D/RFI/webapp/components/summary.html",
+		"/D/workingProgress-D/RFI/webapp/app.js",
+		"/D/workingProgress-D/RFI/webapp/assets/js/services.js",
+		"/D/workingProgress-D/RFI/webapp/components/guardian.html",
+		"/D/workingProgress-D/RFI/webapp/assets/js/rfi.js",
+		"/D/workingProgress-D/RFI/webapp/components/children.html",
+		"/D/workingProgress-D/RFI/webapp/components/UHR.html",
+		"/D/workingProgress-D/RFI/webapp/components/requestor.html",
+		"/D/workingProgress-D/RFI/webapp/assets/less/RFI-typography.less",
+		"/D/workingProgress-D/RFI/webapp/assets/images/checkmark-icn.jpg",
+		"/D/workingProgress-D/RFI/webapp/components/CSAW.html",
+		"/D/workingProgress-D/RFI/fromPhu-0821/js/rfi.js",
+		"/D/workingProgress-D/RFI/webapp/assets/less/NCMEC-bootstrap.less",
+		"/D/workingProgress-D/RFI/webapp/components/login.html",
+		"/D/workingProgress-D/RFI/webapp/assets/less/RFI-buttons.less",
+		"/D/workingProgress-D/RFI/fromPhu-0821/components/children.html",
+		"/D/workingProgress-D/RFI/webapp/rfi.html",
+		"/D/workingProgress-D/RFI/webapp/assets/less/RFI-styles.less",
+		"/C/my.conf.js",
+		"/D/workingProgress-D/RFI/webapp/RFI.sublime-project",
+		"/D/workingProgress-D/RFI/webapp/assets/less/RFI-general.less",
+		"/D/workingProgress-D/RFI/webapp/assets/less/RFI-variables.less",
+		"/D/workingProgress-D/RFI/webapp/components/form.html",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/shared/mainMenu.html",
+		"/D/workingProgress-D/RFI/webapp/assets/js/loginCtrl.js",
+		"/D/workingProgress-D/RFI/fromPhu-0730/rfi_Ludwig/rfi.js",
+		"/D/workingProgress-D/RFI/fromPhu/pages/index.jsp",
+		"/D/workingProgress-D/RFI/fromPhu/pages/rfi.jsp",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/index.html",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/caseAdministration/shared/services.js",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/caseAdministration/assignCMCtrl.js",
+		"/D/workingProgress-D/RFI/fromPhu-0724/rfi.js",
+		"/D/workingProgress-D/RFI/fromPhu/pages/login.jsp",
+		"/D/workingProgress-D/RFI/fromPhu/pages/html/guardianPanel.html",
+		"/D/workingProgress-D/RFI/fromPhu/pages/html/csawPanel.html",
+		"/D/workingProgress-D/RFI/webapp/assets/less/ng-Animation.less",
+		"/D/workingProgress-D/RFI/webapp/assets/css/RFI-styles.css",
+		"/Y/ludwig/workingProgress/RFI/webapp/assets/js/rfi.js",
+		"/Z/UIDesigns/RFI-FORM/assets/js/rfi.js",
+		"/Z/UIDesigns/RFI-FORM/components/children.html",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/caseAdministration/caseAdministration.html",
+		"/D/workingProgress-D/RFI/fromPhu2/js/rfi.js",
+		"/D/workingProgress-D/RFI/fromPhu3/pages/rfi.jsp",
+		"/D/workingProgress-D/RFI/fromPhu2/rfi.html",
+		"/D/workingProgress-D/RFI/fromPhu/rfi.html",
+		"/D/workingProgress-D/RFI/webapp/assets/less/variables.less",
+		"/D/workingProgress-D/RFI/webapp/assets/less/mixins.less",
+		"/D/workingProgress-D/RFI/webapp/assets/less/RFI-mixins.less",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/assets/less/kendoUI-redefined.less",
+		"/D/workingProgress-D/RFI/webapp/assets/less/.NCMEC-bootstrap.less",
+		"/C/Users/ljablonski/Desktop/temp/client/modules/home/header.html",
+		"/C/Users/ljablonski/Desktop/temp/client/modules/home/home.html",
+		"/C/Users/ljablonski/Desktop/temp/client/assets/js/routes.js",
+		"/C/Users/ljablonski/Desktop/temp/client/modules/main/main.html",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/app.js",
+		"/D/workingProgress-D/CASD-request/web/requestForInfo.htm",
+		"/D/workingProgress-D/RFI/webapp/assets/images/CC-wingdings.png",
+		"/C/Users/ljablonski/Desktop/temp/client/index.html",
+		"/C/Users/ljablonski/Desktop/temp/client/components/main-menu/mainMenuCtrl.js",
+		"/C/Users/ljablonski/Desktop/temp/client/assets/js/app.js",
+		"/D/workingProgress-D/RFI/webapp/routes.js",
+		"/D/workingProgress-D/RFI/webapp/assets/css/site.css",
+		"/D/workingProgress-D/RFI/webapp/assets/less/RFI-forms.less",
+		"/D/workingProgress-D/RFI/webapp/assets/css/pageRFI.css",
+		"/D/workingProgress-D/RFI/webapp/RFI.sublime-workspace",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/shared/emailSender.html",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/caseAdministration/assignCM.html",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/caseAdministration/intakeDistribution.html",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/caseAdministration/caseAdministrationCtrl.js",
+		"/C/Users/ljablonski/Desktop/temp/client/modules/case-administration/rfsAdminCtrl.js",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/caseAdministration/intakeDistributionCtrl.js",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/shared/emailSender.js",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/login/loginCtrl.js",
+		"/C/Users/ljablonski/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/ljablonski/AppData/Roaming/Sublime Text 2/Packages/Javascript Beautify/JavascriptBeautify.sublime-settings",
+		"/D/workingProgress-D/ECMS-SVN/src/client/index.html",
+		"/D/workingProgress-D/ECMS-SVN/src/client/modules/user/userSvc.js",
+		"/D/workingProgress-D/ECMS-SVN/src/client/directives/login-form/login-form.html",
+		"/D/workingProgress-D/ECMS-SVN/src/client/modules/login/login.html",
+		"/D/workingProgress-D/ECMS-SVN/src/client/modules/login/loginCtrl.js",
+		"/D/workingProgress-D/ECMS-SVN/src/client/modules/login/loginSvc.js",
+		"/D/workingProgress-D/ECMS-SVN/src/client/directives/login-form/login-form.js",
+		"/D/workingProgress-D/ECMS-SVN/src/client/directives/login-form/login-form.css",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/shared/mainMenuCtrl.js",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/home/home.html",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/login/login.html",
+		"/D/workingProgress-D/ECMS-SVN/src/client/assets/js/routes.js",
+		"/D/workingProgress-D/ECMS-SVN/src/client/robots.txt",
+		"/D/workingProgress-D/ECMS-SVN/src/client/directives/permission/permission.js",
+		"/D/workingProgress-D/ECMS-SVN/src/client/components/caseManagement/caseHeader.html",
+		"/D/workingProgress-D/ECMS-SVN/src/client/components/caseManagement/caseMenu.html",
+		"/D/workingProgress-D/ECMS-SVN/src/client/components/caseManagement/rfsTemplate.html",
+		"/D/workingProgress-D/ECMS-SVN/src/client/components/caseManagement/victimsHeader.html",
+		"/D/workingProgress-D/ECMS-SVN/src/client/components/caseManagement/personTemplate.html",
+		"/D/workingProgress-D/ECMS-SVN/src/client/components/main-menu/mainMenu.html",
+		"/D/workingProgress-D/ECMS-SVN/src/client/components/main-menu/mainMenuCtrl.js",
+		"/D/workingProgress-D/ECMS-SVN/src/client/modules/case-management/main.html",
+		"/D/workingProgress-D/ECMS-SVN/src/client/modules/case-management/caseManagementCtrl.js",
+		"/D/workingProgress-D/ECMS-SVN/src/client/modules/main/main.html",
+		"/D/workingProgress-D/ECMS-SVN/src/client/modules/about/about.html",
+		"/D/workingProgress-D/ECMS-SVN/src/client/components/notification/notification.html",
+		"/D/workingProgress-D/ECMS-SVN/src/client/modules/home/home.html",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/login/loginService.js",
+		"/D/workingProgress-D/ECMS-SVN/src/client/assets/js/app.js",
+		"/D/workingProgress-D/ECMS-SVN/src/client/modules/home/header.html",
+		"/D/workingProgress-D/ECMS-SVN/src/client/modules/shared/config.js",
+		"/D/workingProgress-D/ECMS-SVN/src/main/webapp/components/home/homeCtrl.js",
+		"/D/workingProgress-D/ECMS-SVN/src/client/modules/home/homeCtrl.js",
+		"/D/workingProgress-D/ECMS-SVN/src/package.json",
+		"/D/workingProgress-D/ECMS-SVN/src/.bowerrc",
+		"/D/workingProgress-D/ECMS-SVN/src/server/config/local.env.js",
+		"/D/workingProgress-D/ECMS-SVN/src/bower.json",
+		"/D/workingProgress-D/ECMS-SVN/src/.project",
+		"/C/Users/ljablonski/Desktop/temp/client/modules/case-administration/intakeDistributionCtrl.js",
+		"/D/workingProgress-D/ECMS-SVN/src/client/modules/case-administration/caseAdmin.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"D:\\workingProgress-D\\RFI\\webapp",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"childList",
+			"cleanCase",
+			"caseDto",
+			"priority",
+			"child",
+			"guardian",
+			"6",
+			"csaw",
+			"csawList",
+			"csaw",
+			"child",
+			"childrenList",
+			"csawList",
+			"headerLabel",
+			"btn-primary",
+			"CSAW",
+			"NCMECcaseFlag",
+			"sfdsfsd",
+			"2",
+			"edf2f7",
+			"dde4eb",
+			"d9e4ee",
+			"e2edf7",
+			"cfe1f1",
+			"ced9f5",
+			"b6c4e9",
+			"31689f",
+			"1a4b7e",
+			"loggedIn",
+			"caseDto",
+			"caseNumber",
+			"datepicker",
+			"1",
+			"0",
+			"2",
+			"939eb1",
+			"ABABAB",
+			"5",
+			"2",
+			"6",
+			"1",
+			"4",
+			"3",
+			"disabled",
+			"addClass",
+			"disableFields",
+			"submit query",
+			"guardianList",
+			"Close",
+			"login",
+			"right",
+			"label",
+			"UHRflag",
+			"3",
+			"csaw",
+			"guardian",
+			"csaw",
+			"child",
+			"            <section class=\"scarMarkPhysicalFeature\" ng-repeat=\"smpf in child.scarMarkPhysicalFeatures track by $index\">\n                <div class=\"col-sm-3 form-group\" >\n                     <label>Select a Feature: </label>\n                    <select class=\"form-control \" ng-options=\"type.value as type.value for type in physicalTypeDropdown\" ng-model=\"smpf.lookup.value\" >\n                    </select>\n                </div>\n                <div class=\"col-sm-8 form-group\" >\n                       <label>Description: </label>\n                    <input type=\"text\" class=\"form-control\" ng-model=\"smpf.description\"/>\n                 </div>\n\n                 <div class=\"col-sm-1 form-group\">\n                        <span class=\"add-btn\"><a href=\"\" ng-click=\"addObjectToList(child.scarMarkPhysicalFeatures, $index)\"></a></span>\n                        <span class=\"remove-btn\" ng-show=\"$index >0\"><a href=\"\" ng-click=\"removeFromList(child.scarMarkPhysicalFeatures, $index)\"></a></span>\n                    </div>\n            </section>",
+			"      <section class=\"scarMarkPhysicalFeature\" ng-repeat=\"smpf in child.scarMarkPhysicalFeatures track by $index\">\n                <div class=\"col-sm-3 form-group\" >\n                     <label>Select a Feature: </label>\n                    <select class=\"form-control \" ng-options=\"type.value as type.value for type in physicalTypeDropdown\" ng-model=\"smpf.lookup.value\" >\n                    </select>\n                </div>\n                <div class=\"col-sm-8 form-group\" >\n                       <label>Description: </label>\n                    <input type=\"text\" class=\"form-control\" ng-model=\"smpf.description\"/>\n                 </div>\n\n                 <div class=\"col-sm-1 form-group\">\n                        <span class=\"add-btn\"><a href=\"\" ng-click=\"addObjectToList(child.scarMarkPhysicalFeatures, $index)\"></a></span>\n                        <span class=\"remove-btn\" ng-show=\"$index >0\"><a href=\"\" ng-click=\"removeFromList(child.scarMarkPhysicalFeatures, $index)\"></a></span>\n                    </div>\n            </section>",
+			"scarMarkPhysicalFeatures",
+			"ludwigTest",
+			"button",
+			"span",
+			"div",
+			"label",
+			"readonly",
+			"span",
+			"col-sm-4",
+			"mainMenu",
+			"shadow",
+			"app.login",
+			"$location.path('/login')",
+			"  $location.path('/login');",
+			"myRfi",
+			"app",
+			"ngRoute",
+			"CC",
+			"getDropdown",
+			"</p>",
+			"<p>",
+			"p",
+			"$resource",
+			"$cookieStore",
+			"$scope.checkedIds",
+			"delay",
+			"console",
+			"OTSACM",
+			"optionsToSave",
+			"stringify",
+			"StorageService",
+			"$scope.checkedIds",
+			"checkedIds",
+			"ECMSGrid",
+			"dynamicGridFilters",
+			"filterField",
+			"testVariable",
+			"selectedIds",
+			"caseSelected",
+			"selectItem",
+			"checkedIds",
+			"$scope.checkedIds",
+			"reloadData",
+			"formatstartDate",
+			"disabled",
+			"submitDisabled",
+			"$on",
+			"warningClass",
+			"datePickerDisable",
+			"nonNullUndefined",
+			"caseSelected",
+			"selectItem",
+			"buttonDisabledClass",
+			"checkedIds.length",
+			"ECMSGrid",
+			"checkedIds",
+			"caseSelected",
+			"$scope.checkedIds",
+			"caseNum",
+			"buttonDisabledClass",
+			"checkDateFormating",
+			"casesearch",
+			"enableSumbitBtn",
+			"$scope.disabled ",
+			"todayDate",
+			"formatDate",
+			"broadcast",
+			"startingDateValue"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 124.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 130.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/D/workingProgress-D/ECMS-SVN/src/main/webapp/ECMS-SVN.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 246.0,
+	"status_bar_visible": true
+}

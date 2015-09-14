@@ -13,7 +13,7 @@ angular.module('RFIapp.summary', [])
 .directive ('summaryDir',function ( $rootScope) {
 	return {
 	restrict: 'E',
-	// scope :{},
+	scope :{},
 	controller: 'SummaryCtrl',
 	templateUrl: 'components/summary.html',
 	link: function (scope, element, attrs){

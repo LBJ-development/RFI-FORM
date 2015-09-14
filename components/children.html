@@ -37,17 +37,17 @@
          <div class="row ">
             <div class="col-sm-4 form-group">
                 <label>Nick Name: </label>
-                <input type="text" class="form-control" ng-model="child.person.nickName" />
+                <input type="text" class="form-control" ng-model="child.person.nickName.value" />
             </div>
              <div class="col-sm-4 form-group">
                 <label>Gender: </label>
-                <input type="text" class="form-control" ng-model="child.person.gender" />
+                <input type="text" class="form-control" ng-model="child.person.gender.value" />
             </div>
 <!-- SSN  ///////////////////////////////////////////////////////////////////////////// -->
             <section class="ssn" ng-repeat="ssn in child.person.ssns track by $index">
                 <div class="col-sm-3 form-group">
                     <label>SSN: </label>
-                    <input type="text" class="form-control"  ng-model="child.person.ssns[$index]" />
+                    <input type="text" class="form-control"  ng-model="child.person.ssns[$index].value" />
                 </div>
                     <div class="col-sm-1 form-group">
                         <span class="add-btn"><a href="" ng-click="addToList(child.person.ssns, $index)"></a></span>
@@ -58,7 +58,7 @@
                 <section class="birthday"  ng-repeat="bday in child.person.birthDates track by $index">
                 <div class="col-sm-3 form-group">
                     <label>Birthday: </label>
-                    <input type="text" class="form-control" ng-model="child.person.birthDates[$index]" datepicker />
+                    <input type="text" class="form-control" ng-model="child.person.birthDates[$index].value" datepicker />
                 </div>
                     <div class="col-sm-1 form-group">
                         <span class="add-btn"><a href="" ng-click="addToList(child.person.birthDates, $index)"></a></span>
@@ -69,7 +69,7 @@
                 <section class="birthday"  ng-repeat="email in child.emails track by $index">
                 <div class="col-sm-3 form-group">
                     <label>Email: </label>
-                    <input type="text" class="form-control" ng-model="child.emails[$index]" />
+                    <input type="text" class="form-control" ng-model="child.emails[$index].value" />
                 </div>
                     <div class="col-sm-1 form-group">
                         <span class="add-btn"><a href="" ng-click="addToList(child.emails, $index)"></a></span>
@@ -80,7 +80,7 @@
               <section class="birthday"  ng-repeat="cellphone in child.person.cellPhones track by $index">
                 <div class="col-sm-3 form-group">
                     <label>Cell Phone: </label>
-                    <input type="text" class="form-control" ng-model="child.person.cellPhones[$index]" />
+                    <input type="text" class="form-control" ng-model="child.person.cellPhones[$index].value" />
                 </div>
                     <div class="col-sm-1 form-group">
                         <span class="add-btn"><a href="" ng-click="addToList(child.person.cellPhones, $index)"></a></span>
@@ -156,24 +156,24 @@
 <!-- MISSING LOCATION  ///////////////////////////////////////////////////////////////////////////// -->   
         <div class="sub-title">Missing Location</div>
         <div class="row">
-            <section class="location" ng-repeat="location in child.missingLocations track by $index">
+            <section class="location" ng-repeat="missingLocation in child.missingLocations track by $index">
                 <div class="col-sm-3 form-group" >
                      <label>Address: </label>
-                      <input type="text" class="form-control" ng-model="location.streetAddress" />
+                      <input type="text" class="form-control" ng-model="missingLocation.streetAddress" />
    
                 </div>
                 <div class="col-sm-3 form-group" >
                        <label>City: </label>
-                        <input type="text" class="form-control" ng-model="location.city"/>
+                        <input type="text" class="form-control" ng-model="missingLocation.city"/>
                  </div>
                     <div class="col-sm-2 form-group" >
                        <label>State: </label>
-                        <input type="text" class="form-control" ng-model="location.state"/>
+                        <input type="text" class="form-control" ng-model="missingLocation.state"/>
                  </div>
 
                   <div class="col-sm-3 form-group" >
                        <label>Zip: </label>
-                        <input type="text" class="form-control" ng-model="location.zip"/>
+                        <input type="text" class="form-control" ng-model="missingLocation.zip"/>
                  </div>
 
                  <div class="col-sm-1 form-group">
@@ -188,7 +188,7 @@
             <section class="missingDate" ng-repeat="missingDate in child.missingDates track by $index">
                 <div class="col-sm-3 form-group" >
                      <label>Select a Date: </label>
-                      <input type="text" class="form-control" ng-model="child.missingDates[$index]" datepicker/>
+                      <input type="text" class="form-control" ng-model="missingDate.value" datepicker/>
    
                 </div>
                  <div class="col-sm-1 form-group">

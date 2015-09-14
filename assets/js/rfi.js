@@ -27,7 +27,17 @@ app.controller('ctrl',["$rootScope", "$scope","$attrs", "$http", "$window", "Upl
     }
     $scope.UHR = { value: "false"  };
     $scope.caseNumber = {  value: "" };
-
+    //$scope.caseDto.isCST.isNew = true;
+    // DISABLE AND ENABLE THE LOAD CASE BUTTON 
+    $scope.$watch("caseDto.caseId.length", function () {
+        if($("#caseNumber").val().length == 7){
+                $scope.loadCaseBtn = "btn-primary";
+                $scope.isCaseLoadable = false;
+            }else {
+                $scope.loadCaseBtn = "btn-disabled";
+                $scope.isCaseLoadable = true;
+        }
+    })
    // var contextPath = "http://172.20.2.13:8080/rfi";
     var contextPath = RFIConfig.contextPath;
 
@@ -237,7 +247,7 @@ app.controller('ctrl',["$rootScope", "$scope","$attrs", "$http", "$window", "Upl
             //$scope.dropdown = result.data.elements[1];
             $scope.initial(result.data);
         });
-    };
+    }
 
     $scope.toggleCheck = function(search, searchList) {
         if (searchList.indexOf(search.code) === -1) {

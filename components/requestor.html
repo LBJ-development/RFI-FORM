@@ -1,3 +1,4 @@
+    <form name="requestorForm">
     <section class="requestor" ng-model="requestor">
 <!--     INTERNAL REQUESTOR   ////////////////////////////////////////////////////////////////////////////////////// -->
      <!--   <div id="internalRequestor">
@@ -34,7 +35,7 @@
         <div class="row">
             <div class="col-sm-4 form-group">
                 <label >First Name:</label>
-                <input type="text" ng-model="requestor.firstName" class="form-control"   />
+                <input type="text" ng-model="requestor.firstName" class="form-control" />
             </div>
 
             <div class="col-sm-4 form-group">
@@ -56,10 +57,10 @@
 <div class="sub-title">Case</div>
 <div class="row">
     <div class="col-sm-3 form-group show-hide" ng-show="!NCMECcaseFlag">
-        <input type="text" id="caseNumber" class="form-control" ng-model="caseDto.caseId">
+        <input type="text" id="caseNumber" class="form-control" name="caseNumberN" ng-model="caseDto.caseId" ng-minlength="7" required>
     </div>
     <div class="col-sm-2 form-group" ng-show="!NCMECcaseFlag" >
-        <button class="btn-primary"  ng-click="getCase()">LOAD CASE</button>
+        <button type="button" ng-disabled="isCaseLoadable" ng-class="loadCaseBtn" ng-click="getCase()">LOAD CASE</button>
     </div >
     <div class="col-sm-3 form-group">
         <label>
@@ -77,8 +78,9 @@
     </div>
     <div class="col-sm-3 form-group">
         <label>
-          <input type="checkbox" ng-model="caseDto.isCST"> CST at Risk?
+          <input type="checkbox" ng-model="caseDto.isCST.value" ng-disabled="caseDto.isCST.isNew" ng-checked="caseDto.isCST"> CST at Risk?
         </label>
+
     </div>
 </div>
 <div class="row">
@@ -116,5 +118,6 @@
                 <textarea type="text" ng-model="requestor.comment" class="form-control" id="reqCom" ></textarea>
             </div>
 </div>
+</form>
 
 

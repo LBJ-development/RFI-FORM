@@ -13,19 +13,19 @@
         </div>
     </div>
 <!-- NAMES ///////////////////////////////////////////////////////////////////////////// -->
-        <section class="name" ng-repeat="name in csaw.person.names track by $index">
+        <section class="name" ng-repeat="csawName in csaw.person.names track by $index">
             <div class="row ">
                 <div class="col-sm-4 form-group">
                     <label>First Name: </label>
-                    <input type="text" class="form-control" ng-model="csaw.person.names[$index].firstName" />
+                    <input type="text" class="form-control" ng-model="csawName.firstName" />
                 </div>
                 <div class="col-sm-4 form-group">
                     <label>Middle Name: </label>
-                    <input type="text" class="form-control" ng-model="csaw.person.names[$index].middleName" />
+                    <input type="text" class="form-control" ng-model="csawName.middleName" />
                 </div>
                 <div class="col-sm-3 form-group">
                     <label>Last Name: </label>
-                    <input type="text" class="form-control" ng-model="csaw.person.names[$index].lastName" />
+                    <input type="text" class="form-control" ng-model="csawName.lastName" />
                 </div>
                 <div class="col-sm-1 form-group">
                       <span class="add-btn"><a href="" ng-click="addObjectToList(csaw.person.names, $index)"></a></span>
@@ -34,19 +34,19 @@
             </div>
         </section>
 <!-- ALIAS NAMES ///////////////////////////////////////////////////////////////////////////// -->
-        <section class="name" ng-repeat="name in csaw.person.aliases track by $index">
+        <section class="name" ng-repeat="csawAlias in csaw.person.aliases track by $index">
             <div class="row ">
                 <div class="col-sm-4 form-group">
                     <label>Alias First Name: </label>
-                    <input type="text" class="form-control" ng-model="csaw.person.aliases[$index].firstName" />
+                    <input type="text" class="form-control" ng-model="csawAlias.firstName" />
                 </div>
                 <div class="col-sm-4 form-group">
                     <label>Alias Middle Name: </label>
-                    <input type="text" class="form-control" ng-model="csaw.person.aliases[$index].middleName" />
+                    <input type="text" class="form-control" ng-model="csawAlias.middleName" />
                 </div>
                 <div class="col-sm-3 form-group">
                     <label>Alias Last Name: </label>
-                    <input type="text" class="form-control" ng-model="csaw.person.aliases[$index].lastName" />
+                    <input type="text" class="form-control" ng-model="csawAlias.lastName" />
                 </div>
                 <div class="col-sm-1 form-group">
                       <span class="add-btn"><a href="" ng-click="addObjectToList(csaw.person.aliases, $index)"></a></span>
@@ -58,23 +58,23 @@
     <div class="row ">
          <div class="col-sm-4 form-group">
             <label>Gender: </label>
-            <input type="text" class="form-control" ng-model="csaw.person.gender" />
+            <input type="text" class="form-control" ng-model="csaw.person.gender.value" />
         </div>
          <div class="col-sm-4 form-group">
             <label>Companion Type: </label>
-            <input type="text" class="form-control" ng-model="csaw.companionType"  />
+            <input type="text" class="form-control" ng-model="csaw.companionType.value"  />
         </div>
          <div class="col-sm-4 form-group">
             <label>Relation to Child: </label>
-            <input type="text" class="form-control" ng-model="csaw.relationToChild"  />
+            <input type="text" class="form-control" ng-model="csaw.relationToChild.value"  />
         </div>
     </div>
 <!-- EMAIL  ///////////////////////////////////////////////////////////////////////////// -->
  <div class="row ">
-                <section class="email"  ng-repeat="email in csaw.emails track by $index">
+                <section class="email"  ng-repeat="csawEmail in csaw.emails track by $index">
                 <div class="col-sm-3 form-group">
                     <label>Email: </label>
-                    <input type="text" class="form-control" ng-model="csaw.emails[$index]" />
+                    <input type="text" class="form-control" ng-model="csawEmail.emails.value" />
                 </div>
                     <div class="col-sm-1 form-group">
                         <span class="add-btn"><a href="" ng-click="addToList(csaw.emails, $index)"></a></span>
@@ -82,10 +82,10 @@
                     </div>
              </section>
 <!-- SSN  ///////////////////////////////////////////////////////////////////////////// -->
-            <section class="ssn" ng-repeat="ssn in csaw.person.ssns track by $index">
+            <section class="ssn" ng-repeat="csawSSN in csaw.person.ssns track by $index">
                 <div class="col-sm-3 form-group">
                     <label>SSN: </label>
-                    <input type="text" class="form-control"  ng-model="csaw.person.ssns[$index]" />
+                    <input type="text" class="form-control"  ng-model="csawSSN.ssns.value" />
                 </div>
                     <div class="col-sm-1 form-group">
                         <span class="add-btn"><a href="" ng-click="addToList(csaw.person.ssns, $index)"></a></span>
@@ -93,10 +93,10 @@
                     </div>
              </section>
 <!-- BIRTHDAY ///////////////////////////////////////////////////////////////////////////// -->
-                <section class="birthday"  ng-repeat="bday in csaw.person.birthDates track by $index">
+                <section class="birthday"  ng-repeat="csawBirsthday in csaw.person.birthDates track by $index">
                 <div class="col-sm-3 form-group">
                     <label>Birthday: </label>
-                    <input type="text" class="form-control" ng-model="csaw.person.birthDates[$index]" datepicker />
+                    <input type="text" class="form-control" ng-model="csawBirsthday.birthDates.value" datepicker />
                 </div>
                     <div class="col-sm-1 form-group">
                         <span class="add-btn"><a href="" ng-click="addToList(csaw.person.birthDates, $index)"></a></span>
@@ -104,10 +104,10 @@
                     </div>
              </section>
 <!-- HOME PHONE  ///////////////////////////////////////////////////////////////////////////// -->
-                <section class="homephone"  ng-repeat="homephone in csaw.person.homePhones track by $index">
+                <section class="homephone"  ng-repeat="csawHomephone in csaw.person.homePhones track by $index">
                 <div class="col-sm-3 form-group">
                     <label>Home Phone: </label>
-                    <input type="text" class="form-control" ng-model="csaw.person.homePhones[$index]" />
+                    <input type="text" class="form-control" ng-model="csawHomephone.homePhones.value" />
                 </div>
                     <div class="col-sm-1 form-group">
                         <span class="add-btn"><a href="" ng-click="addToList(csaw.person.homePhones, $index)"></a></span>
@@ -116,10 +116,10 @@
              </section>
 
 <!-- CELL PHONE  ///////////////////////////////////////////////////////////////////////////// -->
-                <section class="cellphone"  ng-repeat="cellphone in csaw.person.cellPhones track by $index">
+                <section class="cellphone"  ng-repeat="csawCellphone in csaw.person.cellPhones track by $index">
                 <div class="col-sm-3 form-group">
                     <label>Cell Phone: </label>
-                    <input type="text" class="form-control" ng-model="csaw.person.cellPhones[$index]" />
+                    <input type="text" class="form-control" ng-model="csawCellphone.cellPhones.value" />
                 </div>
                     <div class="col-sm-1 form-group">
                         <span class="add-btn"><a href="" ng-click="addToList(csaw.person.cellPhones, $index)"></a></span>
@@ -127,10 +127,10 @@
                     </div>
              </section>
 <!-- WORK PHONE  ///////////////////////////////////////////////////////////////////////////// -->
-                <section class="workphone"  ng-repeat="workphone in csaw.workPhones track by $index">
+                <section class="workphone"  ng-repeat="csawWorkphone in csaw.workPhones track by $index">
                 <div class="col-sm-3 form-group">
                     <label>Work Phone: </label>
-                    <input type="text" class="form-control" ng-model="csaw.workPhones[$index]" />
+                    <input type="text" class="form-control" ng-model="csawWorkphone.workPhones.value" />
                 </div>
                     <div class="col-sm-1 form-group">
                         <span class="add-btn"><a href="" ng-click="addToList(csaw.workPhones, $index)"></a></span>

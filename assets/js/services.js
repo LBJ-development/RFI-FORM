@@ -31,10 +31,12 @@ angular.module('RFIapp.services', [])
       });
       var deferred = $q.defer();
       $promise.then(function(result){
-        if(result.statusText == 'OK'){
+        console.log("FROM GETDATA");
+        console.log(result)
+        if(result.data.status.status == 'SUCCESS'){
           deferred.resolve(result);
-        } else {
-          alert('Woops something wen wrong with the AJAX call');
+        } else  if(result.data.status.status == 'FAILED') {
+          alert(result.data.status.message);
         }
       });
       return deferred.promise;

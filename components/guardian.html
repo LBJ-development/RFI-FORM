@@ -13,19 +13,19 @@
             </div>
         </div>
 <!-- NAMES ///////////////////////////////////////////////////////////////////////////// -->
-        <section class="name" ng-repeat="name in guardian.person.names track by $index">
+        <section class="name" ng-repeat="guardianName in guardian.person.names track by $index">
             <div class="row ">
                 <div class="col-sm-4 form-group">
                     <label>First Name: </label>
-                    <input type="text" class="form-control" ng-model="guardian.person.names[$index].firstName" />
+                    <input type="text" class="form-control" ng-model="guardianName.firstName" />
                 </div>
                 <div class="col-sm-4 form-group">
                     <label>Middle Name: </label>
-                    <input type="text" class="form-control" ng-model="guardian.person.names[$index].middleName" />
+                    <input type="text" class="form-control" ng-model="guardianName.middleName" />
                 </div>
                 <div class="col-sm-3 form-group">
                     <label>Last Name: </label>
-                    <input type="text" class="form-control" ng-model="guardian.person.names[$index].lastName" />
+                    <input type="text" class="form-control" ng-model="guardianName.lastName" />
                 </div>
                 <div class="col-sm-1 form-group">
                       <span class="add-btn"><a href="" ng-click="addObjectToList(guardian.person.names, $index)"></a></span>
@@ -37,16 +37,16 @@
         <div class="row ">
             <div class="col-sm-4 form-group">
                 <label>Gender: </label>
-                <input type="text" class="form-control" ng-model="guardian.person.gender" />
+                <input type="text" class="form-control" ng-model="guardian.person.gender.value" />
             </div>
             <div class="col-sm-4 form-group">
                 <label>Relation to Child: </label>
-                <input type="text" class="form-control" ng-model="guardian.relationToChild"  />
+                <input type="text" class="form-control" ng-model="guardian.relationToChild.value"  />
             </div>
-            <section class="email"  ng-repeat="email in guardian.emails track by $index">
+            <section class="email"  ng-repeat="guardianEmail in guardian.emails track by $index">
                 <div class="col-sm-3 form-group">
                     <label>Email: </label>
-                    <input type="text" class="form-control" ng-model="guardian.emails[$index]" />
+                    <input type="text" class="form-control" ng-model="guardianEmail.value" />
                 </div>
                 <div class="col-sm-1 form-group">
                     <span class="add-btn"><a href="" ng-click="addToList(guardian.emails, $index)"></a></span>
@@ -54,10 +54,10 @@
                 </div>
             </section>
 <!-- HOME PHONE  ///////////////////////////////////////////////////////////////////////////// -->
-            <section class="homephone"  ng-repeat="homephone in guardian.person.homePhones track by $index">
+            <section class="homephone"  ng-repeat="guardianHomephone in guardian.person.homePhones track by $index">
                 <div class="col-sm-3 form-group">
                     <label>Home Phone: </label>
-                    <input type="text" class="form-control" ng-model="guardian.person.homePhones[$index]" />
+                    <input type="text" class="form-control" ng-model="guardianHomephone.value" />
                 </div>
                     <div class="col-sm-1 form-group">
                         <span class="add-btn"><a href="" ng-click="addToList(guardian.person.homePhones, $index)"></a></span>
@@ -65,10 +65,10 @@
                     </div>
              </section>
 <!-- CELL PHONE  ///////////////////////////////////////////////////////////////////////////// -->
-            <section class="cellphone"  ng-repeat="cellphone in guardian.person.cellPhones track by $index">
+            <section class="cellphone"  ng-repeat="guardianCellphone in guardian.person.cellPhones track by $index">
                 <div class="col-sm-3 form-group">
                     <label>Cell Phone: </label>
-                    <input type="text" class="form-control" ng-model="guardian.person.cellPhones[$index]" />
+                    <input type="text" class="form-control" ng-model="guardianCellphone.value" />
                 </div>
                     <div class="col-sm-1 form-group">
                         <span class="add-btn"><a href="" ng-click="addToList(guardian.person.cellPhones, $index)"></a></span>
@@ -76,10 +76,10 @@
                     </div>
              </section>
 <!-- SSN  ///////////////////////////////////////////////////////////////////////////// -->
-            <section class="ssn" ng-repeat="ssn in guardian.person.ssns track by $index">
+            <section class="ssn" ng-repeat="guardianSSN in guardian.person.ssns track by $index">
                 <div class="col-sm-3 form-group">
                     <label>SSN: </label>
-                    <input type="text" class="form-control"  ng-model="guardian.person.ssns[$index]" />
+                    <input type="text" class="form-control"  ng-model="guardianSSN.value" />
                 </div>
                     <div class="col-sm-1 form-group">
                         <span class="add-btn"><a href="" ng-click="addToList(guardian.person.ssns, $index)"></a></span>
@@ -87,10 +87,10 @@
                     </div>
              </section>
 <!-- BIRTHDAY ///////////////////////////////////////////////////////////////////////////// -->
-            <section class="birthday"  ng-repeat="bday in guardian.person.birthDates track by $index">
+            <section class="birthday"  ng-repeat="guardianBBD in guardian.person.birthDates track by $index">
                 <div class="col-sm-3 form-group">
                     <label>Birthday: </label>
-                    <input type="text" class="form-control" ng-model="guardian.person.birthDates[$index]" datepicker />
+                    <input type="text" class="form-control" ng-model="guardianBBD.value" datepicker />
                 </div>
                     <div class="col-sm-1 form-group">
                         <span class="add-btn"><a href="" ng-click="addToList(guardian.person.birthDates, $index)"></a></span>

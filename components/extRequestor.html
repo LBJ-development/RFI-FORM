@@ -17,19 +17,27 @@
                 <input type="text" ng-model="extRequestor.title" class="form-control"  />
             </div>
 
-            <div class="col-sm-3 form-group">
-                <label  >Contact Number:</label>
-                <input type="text" ng-model="extRequestor.contactNumber" class="form-control"  />
+            <div class="col-sm-4 form-group">
+                <div class="sharedCol">
+                    <label  >Contact Number:</label>
+                    <input type="text" ng-model="extRequestor.contactNumber" class="form-control"  />
+                </div>
+                <div  ng-show="!addExtNumber">
+                    <span class="add-btn"><a href="" ng-click="addExtNumber = true"></a></span>
+                </div>
             </div>
-            <div class="col-sm-1 form-group">
-                <span class="add-btn"><a href="" ng-click="addExtNumber = true"></a></span>
-            </div>
+            
         </div>
         <div class="row" ng-show="addExtNumber">
             <div class="col-sm-8 form-group"></div>
-            <div class="col-sm-3 form-group">
-                <label >Cell Phone:</label>
-                <input type="text" ng-model="extRequestor.cellNumber" class="form-control" />
+            <div class="col-sm-4 form-group">
+                <div class="sharedCol">
+                    <label >Cell Phone:</label>
+                    <input type="text" ng-model="extRequestor.cellNumber" class="form-control" />
+                </div>
+                <div ng-show="addExtNumber">
+                    <span class="remove-btn"><a href="" ng-click="addExtNumber = false"></a></span>         
+                </div>
             </div>
         </div>   
       

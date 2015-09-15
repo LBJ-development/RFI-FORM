@@ -27,7 +27,7 @@ app.controller('ctrl',["$rootScope", "$scope","$attrs", "$http", "$window", "Upl
     }
     $scope.UHR = { value: "false"  };
     $scope.caseNumber = {  value: "" };
-    //$scope.caseDto.isCST.isNew = true;
+  
     // DISABLE AND ENABLE THE LOAD CASE BUTTON 
     $scope.$watch("caseDto.caseId.length", function () {
         if($("#caseNumber").val().length == 7){

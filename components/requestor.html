@@ -14,20 +14,28 @@
                 <input type="text" ng-model="requestor.title" class="form-control"  />
             </div>
 
-            <div class="col-sm-3 form-group">
-                <label >Contact Number:</label>
-                <input type="text" ng-model="requestor.phoneNumber" class="form-control" />
-            </div>
-             <div class="col-sm-1 form-group">
-                <span class="add-btn"><a href="" ng-click="addNumber = true"></a></span>         
+            <div class="col-sm-4 form-group">
+                <div class="sharedCol">
+                    <label >Contact Number:</label>
+                    <input type="text" ng-model="requestor.phoneNumber" class="form-control" />
+                </div>
+                <div ng-show="!addNumber">
+                    <span class="add-btn"><a href="" ng-click="addNumber = true"></a></span>   
+                </div>      
             </div>
         </div>
 
          <div class="row" ng-show="addNumber">
              <div class="col-sm-8 form-group"></div>
-             <div class="col-sm-3 form-group">
-                <label >Cell Phone:</label>
-                <input type="text" ng-model="requestor.cellNumber" class="form-control" />
+             <div class="col-sm-4 form-group">
+                <div class="sharedCol">
+                    <label >Cell Phone:</label>
+                    <input type="text" ng-model="requestor.cellNumber" class="form-control" />
+                </div>
+                <!--  <div class="col-sm-1 form-group" ng-show="addNumber"> -->
+                 <div  ng-show="addNumber" >
+                    <span class="remove-btn"><a href="" ng-click="addNumber = false"></a></span>         
+                </div>
             </div>
         </div>
     </div>
@@ -56,12 +64,17 @@
 <!--    CASE    ////////////////////////////////////////////////////////////////////////////////////// -->
 <div class="sub-title">Case</div>
 <div class="row">
-    <div class="col-sm-3 form-group show-hide" ng-show="!NCMECcaseFlag">
-        <input type="text" id="caseNumber" class="form-control" name="caseNumberN" ng-model="caseDto.caseId" ng-minlength="7" required>
+    <div class="col-sm-4 form-group show-hide" ng-show="!NCMECcaseFlag">
+         <div class="sharedCol" style="width:65%" ng-show="!NCMECcaseFlag" >
+            <input type="text" id="caseNumber" class="form-control" name="caseNumberN" ng-model="caseDto.caseId" ng-minlength="7" required>
+        </div>
+        <div  style="float:right" ng-show="!NCMECcaseFlag" >
+            <button type="button" ng-disabled="isCaseLoadable" ng-class="loadCaseBtn" ng-click="getCase()">LOAD CASE</button>
+        </div >
     </div>
-    <div class="col-sm-2 form-group" ng-show="!NCMECcaseFlag" >
+    <!-- <div class="col-sm-2 form-group" ng-show="!NCMECcaseFlag" >
         <button type="button" ng-disabled="isCaseLoadable" ng-class="loadCaseBtn" ng-click="getCase()">LOAD CASE</button>
-    </div >
+    </div > -->
     <div class="col-sm-3 form-group">
         <label>
             <span style="font-weight:bold" class="show-hide" ng-show="!NCMECcaseFlag">OR: </span><input type="checkbox" id="NCMECcase" ng-model="NCMECcaseFlag" ng-click=" isNCMECCcase()"> Non-NCMEC case?
@@ -78,9 +91,8 @@
     </div>
     <div class="col-sm-3 form-group">
         <label>
-          <input type="checkbox" ng-model="caseDto.isCST.value" ng-disabled="caseDto.isCST.isNew" ng-checked="caseDto.isCST"> CST at Risk?
+          <input type="checkbox" ng-model="caseDto.isCST.value" ng-disabled="caseDto.isCST.isNew == false" ng-checked="caseDto.isCST.value == 1"> CST at Risk?
         </label>
-
     </div>
 </div>
 <div class="row">

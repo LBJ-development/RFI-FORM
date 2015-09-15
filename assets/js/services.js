@@ -67,3 +67,10 @@ angular.module('RFIapp.services', [])
       sendData  : sendData
   };
 }]);
+
+        //url: contextPath  + "/getCase/" + "1113129", // UHR CASE EXAMPLE
+        //url: contextPath  + "/getCase/" + "1248911", // CHILD CASE EXAMPLE
+        //url: contextPath  + "/getCase/" + "1248912", // CHILD CASE EXAMPLE
+        //url: contextPath  + "/getCase/" + "1115328", // UHR CASE EXAMPLE
+        //url: contextPath  + "/getCase/" + "1242386", // CHILD CASE EXAMPLE
+        //url: contextPath  + "/getCase/" + "1242388", // CHILD CASE EXAMPLE

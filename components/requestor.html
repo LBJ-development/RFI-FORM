@@ -4,18 +4,22 @@
      <!--   <div id="internalRequestor">
           <div class="sub-title" >Internal Requestor</div> -->
         <div class="row ">
-            <div class="col-sm-4 form-group">
-                <label  >Department:</label>
-                <input type="text" ng-model="requestor.department" class="form-control"  >
+            <div class="col-sm-4 form-group" >
+                <div class="sharedCol4">
+                    <label  >Department:</label>
+                    <input type="text" ng-model="requestor.department" class="form-control"  >
+            </div>
             </div>
 
             <div class="col-sm-4 form-group">
-                <label >Title:</label>
-                <input type="text" ng-model="requestor.title" class="form-control"  />
+                <div class="sharedCol4">
+                    <label >Title:</label>
+                    <input type="text" ng-model="requestor.title" class="form-control"  />
+               </div>
             </div>
 
             <div class="col-sm-4 form-group">
-                <div class="sharedCol">
+                <div class="sharedCol4">
                     <label >Contact Number:</label>
                     <input type="text" ng-model="requestor.phoneNumber" class="form-control" />
                 </div>
@@ -28,7 +32,7 @@
          <div class="row" ng-show="addNumber">
              <div class="col-sm-8 form-group"></div>
              <div class="col-sm-4 form-group">
-                <div class="sharedCol">
+                <div class="sharedCol4">
                     <label >Cell Phone:</label>
                     <input type="text" ng-model="requestor.cellNumber" class="form-control" />
                 </div>
@@ -42,18 +46,24 @@
 
         <div class="row">
             <div class="col-sm-4 form-group">
-                <label >First Name:</label>
-                <input type="text" ng-model="requestor.firstName" class="form-control" />
+                <div class="sharedCol4">
+                    <label >First Name:</label>
+                    <input type="text" ng-model="requestor.firstName" class="form-control" />
+                </div>
             </div>
 
             <div class="col-sm-4 form-group">
-                <label  >Last Name:</label>
-                <input type="text" ng-model="requestor.lastName" class="form-control" id="reqLasNam" />
+                <div class="sharedCol4">
+                    <label  >Last Name:</label>
+                    <input type="text" ng-model="requestor.lastName" class="form-control" id="reqLasNam" />
+                </div>
             </div>
             
             <div class="col-sm-4 form-group">
-                <label  >Email:</label>
-                <input type="text" ng-model="requestor.email" class="form-control" id="reqEma" />
+                <div class="sharedCol4">
+                    <label  >Email:</label>
+                    <input type="text" ng-model="requestor.email" class="form-control" id="reqEma" />
+                </div>
             </div>
         </div>
     </div>
@@ -65,11 +75,11 @@
 <div class="sub-title">Case</div>
 <div class="row">
     <div class="col-sm-4 form-group show-hide" ng-show="!NCMECcaseFlag">
-         <div class="sharedCol" style="width:65%" ng-show="!NCMECcaseFlag" >
+         <div class="sharedCol4" style="width:45%" ng-show="!NCMECcaseFlag" >
             <input type="text" id="caseNumber" class="form-control" name="caseNumberN" ng-model="caseDto.caseId" ng-minlength="7" required>
         </div>
-        <div  style="float:right" ng-show="!NCMECcaseFlag" >
-            <button type="button" ng-disabled="isCaseLoadable" ng-class="loadCaseBtn" ng-click="getCase()">LOAD CASE</button>
+        <div   ng-show="!NCMECcaseFlag" >
+            <button type="button" ng-disabled="isCaseLoadable" ng-class="loadCaseBtn"  style="margin-left:20px" ng-click="getCase()">LOAD CASE</button>
         </div >
     </div>
     <!-- <div class="col-sm-2 form-group" ng-show="!NCMECcaseFlag" >
@@ -110,7 +120,7 @@
         <label>Select a Date:</label>
             <input type="text" class="form-control "ng-model="requestor.requestDate" datepicker />
              </div>
-               <div class="col-sm-8 form-group" >
+               <div class="col-sm-8 form-group" style="padding-left:0">
         <label style="font-style: italic; margin-top:27px ">Low Priority = 1week  |  Routine = 3 days  |  Priority = 24hrs  |  Immediate = ASAP  |  Specific Date = Selected Date</label>
    
     </div>

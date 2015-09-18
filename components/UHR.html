@@ -5,7 +5,7 @@
         <div class="sub-title">UHR {{$index + 1}}
             <div style="float: right">
                 <label>
-                    <input type="checkbox" ng-model="uhr.person.isSearchable"><span class="headerLabel"> Conduct Searches</span>
+                    <input type="checkbox" ng-model="uhr.person.isSearchable"><span class="headerLabel" style="padding-right:20px"> Conduct Searches</span>
                 </label>
                 <label>
                     <input type="checkbox" ng-model="uhr.person.isInReport"><span class="headerLabel">  Include in Report </span>
@@ -13,38 +13,50 @@
             </div>
         </div>
 <!-- NAMES ///////////////////////////////////////////////////////////////////////////// -->
-        <section class="name" ng-repeat="UHRname in uhr.person.names track by $index">
+ <section class="name" ng-repeat="name in uhr.person.names track by $index">
             <div class="row ">
                 <div class="col-sm-4 form-group">
-                    <label>First Name: </label>
-                    <input type="text" class="form-control" ng-model="UHRname.firstName" />
+                    <div class="sharedCol4">
+                      <label>First Name: </label>
+                      <input type="text" class="form-control" ng-model="name.firstName" />
+                    </div>
                 </div>
                 <div class="col-sm-4 form-group">
-                    <label>Middle Name: </label>
-                    <input type="text" class="form-control" ng-model="UHRname.middleName" />
+                    <div class="sharedCol4">
+                      <label>Middle Name: </label>
+                      <input type="text" class="form-control" ng-model="name.middleName" />
+                    </div>
                 </div>
-                <div class="col-sm-3 form-group">
-                    <label>Last Name: </label>
-                    <input type="text" class="form-control" ng-model="UHRname.lastName" />
-                </div>
-                <div class="col-sm-1 form-group">
-                      <span class="add-btn"><a href="" ng-click="addObjectToList(uhr.person.names, $index)"></a></span>
-                    <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(uhr.person.names, $index)"></a></span>
+                <div class="col-sm-4 form-group">
+                    <div class="sharedCol4">
+                        <label>Last Name: </label>
+                        <input type="text" class="form-control" ng-model="name.lastName" />
+                      </div>
+                      <div>
+                        <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(uhr.person.names, $index)"></a></span>
+                        <span class="add-btn" ng-show="$last"><a href="" ng-click="addObjectToList(uhr.person.names, $index)"></a></span> 
+                    </div>
                 </div>
             </div>
         </section>
         <div class="row ">
             <div class="col-sm-4 form-group">
-                <label>Gender: </label>
-                <input type="text" class="form-control"  ng-model="uhr.person.gender.value"/>
+                <div class="sharedCol4">
+                    <label>Gender: </label>
+                    <input type="text" class="form-control"  ng-model="uhr.person.gender.value"/>
+                </div>
             </div>
             <div class="col-sm-4 form-group">
-                <label>Race: </label>
-                <input type="text" class="form-control"  ng-model="uhr.person.race.value"/>
+                <div class="sharedCol4">
+                    <label>Race: </label>
+                    <input type="text" class="form-control"  ng-model="uhr.person.race.value"/>
+                </div>
             </div>
             <div class="col-sm-4 form-group">
-                <label>Namus #: </label>
-                <input type="text" class="form-control"  ng-model="uhr.namus.value"/>
+                <div class="sharedCol4">
+                    <label>Namus #: </label>
+                    <input type="text" class="form-control"  ng-model="uhr.namus.value"/>
+                </div>
             </div>
       <!--       <div class="col-sm-4 form-group">
                 <label>Eye Color: </label>
@@ -54,87 +66,100 @@
                 <label>Hair Color: </label>
                 <input type="text" class="form-control"  ng-model="uhr.hairColor"/>
             </div> -->
-           
         </div>
 
 <!-- PHYSICAL FEATURES  ///////////////////////////////////////////////////////////////////////////// -->
-        <div class="sub-title">Physical Features</div>
+       <div class="sub-title">Physical Features</div>
         <div class="row">
-            <div class="col-sm-4 form-group">
+
+           <div class="col-sm-4 form-group">
+             <div class="sharedCol4">
                 <label>Weight Range (lbs): </label>
                 <input type="text" class="form-control"  ng-model="uhr.weightRange.value"/>
+              </div>
             </div>
             <div class="col-sm-4 form-group">
+              <div class="sharedCol4">
                 <label>Height Range (ft/in): </label>
                 <input type="text" class="form-control"  ng-model="uhr.heightRange.value"/>
+              </div>
             </div>
             <div class="col-sm-4 form-group">
+              <div class="sharedCol4">
                 <label>Age Range: </label>
                 <input type="text" class="form-control"  ng-model="uhr.ageRange.value"/>
+              </div>
             </div>
+
             <section class="scarMarkPhysicalFeature" ng-repeat="smpf in uhr.scarMarkPhysicalFeatures track by $index">
-                <div class="col-sm-3 form-group" >
-                     <label>Select a Feature: </label>
-                    <select class="form-control " ng-options="type.value as type.value for type in physicalTypeDropdown" ng-model="smpf.lookup.value" >
-                    </select>
+                <div class="col-sm-4 form-group" >
+                  <div class="sharedCol4">
+                      <label>Select a Feature: </label>
+                      <select class="form-control " ng-options="type.value as type.value for type in physicalTypeDropdown" ng-model="smpf.lookup.value" ></select>
+                  </div>
                 </div>
                 <div class="col-sm-8 form-group" >
+                     <div class="sharedCol8">
                        <label>Description: </label>
-                    <input type="text" class="form-control" ng-model="smpf.description"/>
+                      <input type="text" class="form-control" ng-model="smpf.description"/>
+                    </div>
+                    <div >
+                      <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(uhr.scarMarkPhysicalFeatures, $index)"></a></span>
+                      <span class="add-btn" ng-show="$last"><a href="" ng-click="addObjectToList(uhr.scarMarkPhysicalFeatures, $index)"></a></span>
+                    </div>
                  </div>
-
-                 <div class="col-sm-1 form-group">
-                        <span class="add-btn"><a href="" ng-click="addObjectToList(uhr.scarMarkPhysicalFeatures, $index)"></a></span>
-                        <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(uhr.scarMarkPhysicalFeatures, $index)"></a></span>
-                     </div>
             </section>
         </div>
-
-<!-- BODY FOUND  ///////////////////////////////////////////////////////////////////////////// -->       
-        <div class="sub-title">Body Found Info</div>
+<!-- DATE FOUND  ///////////////////////////////////////////////////////////////////////////// -->       
+        <div class="sub-title">Date Found</div>
         <div class="row">
-            <section class="birthday"  ng-repeat="bday in uhr.person.birthDates track by $index">
-                <div class="col-sm-3 form-group">
-                    <label>Date Found: </label>
-                    <input type="text" class="form-control" ng-model="uhr.person.birthDates[$index]" datepicker />
-                </div>
-                    <div class="col-sm-1 form-group">
-                        <span class="add-btn"><a href="" ng-click="addToList(uhr.person.birthDates, $index)"></a></span>
-                        <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(uhr.person.birthDates, $index)"></a></span>
+                <div class="col-sm-4 form-group">
+                    <div class="sharedCol4">
+                        <label>Date Found: </label>
+                        <input type="text" class="form-control" ng-model="uhr.dateFound.value" datepicker />
                     </div>
-            </section>
+                </div> 
         </div>
 <!-- LOCATION FOUND  ///////////////////////////////////////////////////////////////////////////// --> 
         <div class="sub-title">Location Found</div>
         <div class="row">
             <section class="location" ng-repeat="location in uhr.foundLocations track by $index">
-                <div class="col-sm-3 form-group" >
+                <div class="col-sm-4 form-group" >
+                   <div class="sharedCol4">
                      <label>Address: </label>
                       <input type="text" class="form-control" ng-model="location.streetAddress" />
+                    </div>
                 </div>
-                <div class="col-sm-3 form-group" >
+                <div class="col-sm-4 form-group" >
+                    <div class="sharedCol4">
                        <label>City: </label>
                         <input type="text" class="form-control" ng-model="location.city"/>
-                 </div>
-                    <div class="col-sm-2 form-group" >
-                       <label>State: </label>
-                        <input type="text" class="form-control" ng-model="location.state"/>
-                 </div>
-
-                  <div class="col-sm-3 form-group" >
-                       <label>Zip: </label>
-                        <input type="text" class="form-control" ng-model="location.zip"/>
-                 </div>
-                 <div class="col-sm-1 form-group">
-                        <span class="add-btn"><a href="" ng-click="addObjectToList(uhr.foundLocations, $index)"></a></span>
-                        <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(uhr.foundLocations, $index)"></a></span>
-                </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4 form-group" >
+                        <div class="sharedCol4">
+                          <div style="width:55%; float:left">
+                           <label >State: </label>
+                           <input type="text" class="form-control" ng-model="location.state"/>
+                        </div>
+                       <div style="width:35% ; float:right">
+                            <label>Zip: </label>
+                            <input type="text" class="form-control" ng-model="location.zip"/>
+                          </div>
+                      </div>
+                        <div>
+                          <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(uhr.foundLocations, $index)"></a></span>
+                          <span class="add-btn" ng-show="$last"><a href="" ng-click="addObjectToList(uhr.foundLocations, $index)"></a></span>
+                        </div>
+                      </div> 
             </section>
         </div>
         <div class="row">
             <div class="col-sm-12 form-group">
-                <label >Detail:</label>
-                <textarea type="text" ng-model="uhr.foundLocations[0].detail" class="form-control" ></textarea>
+                <div class="sharedCol12">
+                    <label >Detail:</label>
+                    <textarea type="text" ng-model="uhr.foundLocations[0].detail" class="form-control" ></textarea>
+                </div>
             </div>
         </div>
         <div class="h-sep" style="margin:10px 0 20px 0" ng-show="!uhr.person.isSearchable && uhr.person.isNew[$index]"></div>
@@ -151,8 +176,10 @@
 <!-- COMMENTS  ///////////////////////////////////////////////////////////////////////////// -->         
         <div class="row" ng-show="uhr.person.isSearchable">
             <div class="col-sm-12 form-group">
-                <label >Comment:</label>
-                <textarea type="text" ng-model="uhr.comments" class="form-control" ></textarea>
+                <div class="sharedCol12">
+                    <label >Comment:</label>
+                    <textarea type="text" ng-model="uhr.comments" class="form-control" ></textarea>
+                </div>
             </div>
         </div>
         <div ng-show="uhr.person.isNew[$index]">

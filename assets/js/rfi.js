@@ -145,6 +145,7 @@ app.controller('ctrl',["$rootScope", "$scope","$attrs", "$http", "$window", "Upl
             //eyeColor: "",
             searches:[],
             foundLocations: [{}],
+            dateFound: {value: "", isNew: true},
             comments: "",
          });
            $scope.openPanel("#closeUHR-btn" ,  "#panelUHR");
@@ -229,6 +230,12 @@ app.controller('ctrl',["$rootScope", "$scope","$attrs", "$http", "$window", "Upl
             return this.value!=''
         }).prop('disabled', true)
         .addClass('disabled-textinput');
+/*
+         $(':input:text').filter(function(){
+            return this.value!=''
+        }).find('span.remove-btn')
+         .css("display", "none");*/
+
         // DISABLE SELECT DROPDOWNS ///////////////////////
         $('select').filter(function(){
             return this.value!='?'

@@ -31,8 +31,8 @@ angular.module('RFIapp.services', [])
       });
       var deferred = $q.defer();
       $promise.then(function(result){
-        console.log("FROM GETDATA");
-        console.log(result)
+/*        console.log("FROM GETDATA");
+        console.log(result);*/
         if(result.data.status.status == 'SUCCESS'){
           deferred.resolve(result);
         } else  if(result.data.status.status == 'FAILED') {
@@ -43,6 +43,10 @@ angular.module('RFIapp.services', [])
     };
 
   var sendData = function(url, data){
+
+    console.log("FROM DATA SEND");
+    console.log(data);
+
 
     var $promise =  $http({
       method: 'POST',

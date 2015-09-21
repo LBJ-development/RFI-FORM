@@ -2,8 +2,8 @@
 
 app.controller('ctrl',["$rootScope", "$scope","$attrs", "$http", "$window", "Upload", "$timeout", "$location", "$interval", "ServicesFtry", "DataFtry", "RFIConfig", function($rootScope, $scope, $attrs, $http, $window, Upload, $timeout, $location, $interval, ServicesFtry, DataFtry, RFIConfig ){
 
-    $scope.requestor;
-    $scope.caseDto = {caseId : "", isCST: false };
+    $scope.requestor ;
+    $scope.caseDto = {caseId : "",  isCST: {isNew: true, value:""} };
     $scope.childrenList = [];
     $scope.csawList = [];
     $scope.guardianList = [];
@@ -135,7 +135,7 @@ app.controller('ctrl',["$rootScope", "$scope","$attrs", "$http", "$window", "Upl
 
     $scope.addUhr = function() {
          $scope.uhrList.push({
-            person: {names: [{firstName: "", middleName: "", lastName: ""}], gender: "", race: "", birthDates: [""] , isNew: "true", isInReport: false, isSearchable: false},
+            person: {names: [{firstName: "", middleName: "", lastName: ""}], gender: {}, race: {}, birthDates: [{}] , isNew: "true", isInReport: false, isSearchable: false},
             scarMarkPhysicalFeatures: [{}],
             //hairColor: "",
             weightRange: {value: "", isNew: true},
@@ -153,7 +153,7 @@ app.controller('ctrl',["$rootScope", "$scope","$attrs", "$http", "$window", "Upl
 
     $scope.addGuardian = function() {
          $scope.guardianList.push({
-            person: {names: [{firstName: "", middleName: "", lastName: ""}], gender: "", ssns: [""], birthDates: [""], homePhones: [""], cellPhones: [""], isNew: "true", isInReport: false, isSearchable: false},
+            person: {names: [{firstName: "", middleName: "", lastName: ""}], gender: {}, ssns: [{}], birthDates: [{}], homePhones:[{}], cellPhones: [{}], isNew: "true", isInReport: false, isSearchable: false},
             searches:[],
             onlineActivities: [{}],
             locations: [{}],
@@ -166,37 +166,37 @@ app.controller('ctrl',["$rootScope", "$scope","$attrs", "$http", "$window", "Upl
 
     $scope.addCsaw = function() {
          $scope.csawList.push({
-            person: {names: [{firstName: "", middleName: "", lastName: ""}], aliases: [{firstName: "", middleName: "", lastName: ""}], gender: "", ssns: [""], birthDates: [""], homePhones: [""], cellPhones: [""], isNew: "true", isInReport: false, isSearchable: false},
+            person: {names: [{firstName: "", middleName: "", lastName: ""}], aliases: [{firstName: "", middleName: "", lastName: ""}], gender: {}, ssns: [{}], birthDates: [{}], homePhones: [{}], cellPhones: [{}], isNew: "true", isInReport: false, isSearchable: false},
             searches:[],
             scarMarkPhysicalFeatures: [{}],
             onlineActivities: [{}],
             locations: [{}],
-            emails: [""],
-            weightRange: "",
-            heightRange: "",
-            ageRange: "",
+            emails: [{}],
+            weightRange:  {value: "", isNew: true},
+            heightRange:  {value: "", isNew: true},
+            ageRange:  {value: "", isNew: true},
             comments: "",
-            relationToChild: "",
-            companionType: "",
-            workPhones: [""],
-            driverLicenses: [""]
+            relationToChild: {},
+            companionType: {},
+            workPhones: [{}],
+            driverLicenses: [{}]
          });
            $scope.openPanel("#closeCSAW-btn" ,  "#panelCSAW");
     };
 
     $scope.addChild = function() {
          $scope.childrenList.push({
-            person: {names: [{firstName: "", middleName: "", lastName: ""}], gender: "", ssns: [""], birthDates: [""], homePhones: [""], cellPhones: [""], isNew: "true", isInReport: false, isSearchable: false},
+            person: {names: [{firstName: "", middleName: "", lastName: ""}], gender: {}, ssns: [{}], birthDates: [{}], homePhones: [{}], cellPhones: [{}], isNew: "true", isInReport: false, isSearchable: false},
             searches:[],
             scarMarkPhysicalFeatures: [{}],
             missingLocations: [{}],
-            missingDates: [""],
-            weightRange: "",
-            heightRange: "",
-            ageRange: "",
+            missingDates: [{}],
+            weightRange:  {value: "", isNew: true},
+            heightRange:  {value: "", isNew: true},
+            ageRange:  {value: "", isNew: true},
             comments: "",
-            nickName: "",
-            emails: [""],
+            nickName: {},
+            emails: [{}],
             onlineActivities: [{}]
          });
          $scope.openPanel("#closeChild-btn" ,  "#panelChild");
@@ -230,11 +230,10 @@ app.controller('ctrl',["$rootScope", "$scope","$attrs", "$http", "$window", "Upl
             return this.value!=''
         }).prop('disabled', true)
         .addClass('disabled-textinput');
-/*
-         $(':input:text').filter(function(){
+        // REMOVE THE REMOVE BUTTON FROM FIEDS POPULATED FROM THE DATABASE ///////////////////////////  
+        $(':input:text').filter(function(){
             return this.value!=''
-        }).find('span.remove-btn')
-         .css("display", "none");*/
+        }).parent().parent().find('.remove-btn').css('display' , 'none');
 
         // DISABLE SELECT DROPDOWNS ///////////////////////
         $('select').filter(function(){
@@ -266,15 +265,15 @@ app.controller('ctrl',["$rootScope", "$scope","$attrs", "$http", "$window", "Upl
 
     $scope.sendRequest = function() {
         //copy the list (not necessary, just for demo purposes)
-        var copyOfChildrenList = $scope.childrenList.slice();
-
-        var copyOfExtRequestor = $scope.extRequestorList.slice();
-        var copyOfCsaw = $scope.csawList.slice();
-        var copyOfGuardian = $scope.guardianList.slice();
-        var copyOfUhr = $scope.uhrList.slice();
-        var copyOfCase = $scope.caseDto;
-        var copyOfPriority = $scope.requestor.priority;
-        var copyOfRequestDate = $scope.requestor.requestDate;
+        var copyOfChildrenList  = $scope.childrenList.slice();
+        var copyOfRequestor     = $scope.requestor;
+        var copyOfExtRequestor  = $scope.extRequestorList.slice();
+        var copyOfCsaw          = $scope.csawList.slice();
+        var copyOfGuardian      = $scope.guardianList.slice();
+        var copyOfUhr           = $scope.uhrList.slice();
+        var copyOfCase          = $scope.caseDto;
+        var copyOfPriority      = $scope.requestor.priority;
+        var copyOfRequestDate   = $scope.requestor.requestDate;
         //now clear the origninal list, the UI will update (not necessary, just for demo purposes)
         //$scope.childrenList = [];
         var jsonString = JSON.stringify({childrenList: copyOfChildrenList, requestor: copyOfRequestor, csawList: copyOfCsaw, guardianList: copyOfGuardian, caseDto: copyOfCase, uhrList: copyOfUhr, extRequestor: copyOfExtRequestor, priority: copyOfPriority, byDate: copyOfRequestDate});
@@ -302,33 +301,33 @@ app.controller('ctrl',["$rootScope", "$scope","$attrs", "$http", "$window", "Upl
          $scope.onlineActivityDropdown          = data.websiteType;
     };
 
-        $scope.$watch('files', function () {
+    $scope.$watch('files', function () {
             $scope.upload($scope.files);
         });
         $scope.log = '';
 
-        $scope.upload = function (files) {
-            if (files && files.length) {
-                for (var i = 0; i < files.length; i++) {
-                    var file = files[i];
-                    Upload.upload({
-                        url: $attrs.contextPath + "/upload",
-                        fields: {
-                            'username': 'pnguyen'
-                        },
-                        file: file
-                    }).progress(function (evt) {
-                        var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                        $scope.log = 'progress: ' + progressPercentage + '% ' +
-                                    evt.config.file.name + '\n' + $scope.log;
-                    }).success(function (data, status, headers, config) {
-                        $timeout(function() {
-                               $scope.log =  config.file.name  + '\n' + $scope.log;
-                        });
+    $scope.upload = function (files) {
+        if (files && files.length) {
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                Upload.upload({
+                    url: $attrs.contextPath + "/upload",
+                    fields: {
+                        'username': 'pnguyen'
+                    },
+                    file: file
+                }).progress(function (evt) {
+                    var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                    $scope.log = 'progress: ' + progressPercentage + '% ' +
+                                evt.config.file.name + '\n' + $scope.log;
+                }).success(function (data, status, headers, config) {
+                    $timeout(function() {
+                            $scope.log =  config.file.name  + '\n' + $scope.log;
                     });
-                }
+                });
             }
-        };
+        }
+    };
 
     $rootScope.logout = function(data) {
         $rootScope.loggedIn = false;

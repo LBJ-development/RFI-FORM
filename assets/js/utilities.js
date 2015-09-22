@@ -86,7 +86,7 @@ angular.module('RFIapp.utilities', [])
         scope.addExtRequestor = function(evt) {
        
                 scope.extRequestorList.push({
-                    person: {names: [{firstName: "",  lastName: ""}]},
+                    name:  {firstName: "",  lastName: ""},
                     department: "",
                     title: "",
                     contactNumber: "",

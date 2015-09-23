@@ -58,7 +58,7 @@
                 <div class="col-sm-4 form-group">
                     <div class="sharedCol4">
                         <label>Email: </label>
-                        <input type="text" class="form-control" ng-model="guardianEmail.value" />
+                        <input type="text" class="form-control" ng-model="guardian.emails[$index].value" />
                     </div>
                     <div>
                         <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(guardian.emails, $index)"></a></span>
@@ -71,7 +71,7 @@
                 <div class="col-sm-4 form-group">
                     <div class="sharedCol4">
                         <label>Home Phone: </label>
-                        <input type="text" class="form-control" ng-model="homephone.value" />
+                        <input type="text" class="form-control" ng-model="guardian.person.homePhones[$index].value" />
                     </div>
                     <div>
                         <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(guardian.person.homePhones, $index)"></a></span>
@@ -85,7 +85,7 @@
                 <div class="col-sm-4 form-group">
                     <div class="sharedCol4">
                         <label>Cell Phone: </label>
-                        <input type="text" class="form-control" ng-model="cellphone.value" />
+                        <input type="text" class="form-control" ng-model="guardian.person.cellPhones[$index].value" />
                     </div>
                     <div>
                         <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(guardian.person.cellPhones, $index)"></a></span>
@@ -98,7 +98,7 @@
                 <div class="col-sm-4 form-group">
                     <div class="sharedCol4">
                         <label>SSN: </label>
-                        <input type="text" class="form-control"  ng-model="ssn.value" />
+                        <input type="text" class="form-control"  ng-model="guardian.person.ssns[$index].value" />
                     </div>
                     <div>
                         <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(guardian.person.ssns, $index)"></a></span>
@@ -111,7 +111,7 @@
                 <div class="col-sm-4 form-group">
                     <div class="sharedCol4">
                         <label>Birthday: </label>
-                        <input type="text" class="form-control" ng-model="bday.value" datepicker />
+                        <input type="text" class="form-control" ng-model="guardian.person.birthDates[$index].value" datepicker />
                     </div>
                     <div>
                         <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(guardian.person.birthDates, $index)"></a></span>

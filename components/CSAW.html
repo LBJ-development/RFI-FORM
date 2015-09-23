@@ -94,7 +94,7 @@
                 <div class="col-sm-4 form-group">
                     <div class="sharedCol4">
                         <label>Email: </label>
-                        <input type="text" class="form-control" ng-model="email.value" />
+                        <input type="text" class="form-control" ng-model="saw.emails[$index].value" />
                     </div>
                      <div>
                         <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(csaw.emails, $index)"></a></span>
@@ -107,7 +107,7 @@
                 <div class="col-sm-4 form-group">
                     <div class="sharedCol4">
                         <label>SSN: </label>
-                        <input type="text" class="form-control"  ng-model="ssn.value" />
+                        <input type="text" class="form-control"  ng-model="csaw.person.ssns[$index].value" />
                     </div>
                      <div >
                         <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(csaw.person.ssns, $index)"></a></span>
@@ -121,7 +121,7 @@
                 <div class="col-sm-4 form-group">
                     <div class="sharedCol4">
                         <label>Birthday: </label>
-                        <input type="text" class="form-control" ng-model="bday.value" datepicker />
+                        <input type="text" class="form-control" ng-model="csaw.person.birthDates[$index].value" datepicker />
                     </div>
                      <div>
                         <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(csaw.person.birthDates, $index)"></a></span>
@@ -134,7 +134,7 @@
                 <div class="col-sm-4 form-group">
                     <div class="sharedCol4">
                         <label>Home Phone: </label>
-                        <input type="text" class="form-control" ng-model="homephone.value" />
+                        <input type="text" class="form-control" ng-model="csaw.person.homePhones[$index].value" />
                     </div>
                      <div>
                         <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(csaw.person.homePhones, $index)"></a></span>
@@ -148,7 +148,7 @@
                 <div class="col-sm-4 form-group">
                     <div class="sharedCol4">
                         <label>Cell Phone: </label>
-                        <input type="text" class="form-control" ng-model="cellphone.value" />
+                        <input type="text" class="form-control" ng-model="csaw.person.cellPhones[$index].value" />
                     </div>
                     <div>
                         <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(csaw.person.cellPhones, $index)"></a></span>
@@ -161,7 +161,7 @@
                 <div class="col-sm-4 form-group">
                     <div class="sharedCol4">
                         <label>Work Phone: </label>
-                        <input type="text" class="form-control" ng-model="workphone.value" />
+                        <input type="text" class="form-control" ng-model=" csaw.workPhones[$index].value" />
                     </div>
                     <div>
                         <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(csaw.workPhones, $index)"></a></span>
@@ -176,19 +176,19 @@
              <div class="col-sm-4 form-group">
                 <div class="sharedCol4">
                     <label>Weight Range (lbs): </label>
-                    <input type="text" class="form-control"  ng-model="csaw.weightRange"/>
+                    <input type="text" class="form-control"  ng-model="csaw.weightRange.value"/>
                 </div>
             </div>
             <div class="col-sm-4 form-group">
                 <div class="sharedCol4">
                     <label>Height Range (ft/in): </label>
-                    <input type="text" class="form-control"  ng-model="csaw.heightRange"/>
+                    <input type="text" class="form-control"  ng-model="csaw.heightRange.value"/>
                 </div>
             </div>
             <div class="col-sm-4 form-group">
                 <div class="sharedCol4">
                     <label>Age Range: </label>
-                    <input type="text" class="form-control"  ng-model="csaw.ageRange"/>
+                    <input type="text" class="form-control"  ng-model="csaw.ageRange.value"/>
                 </div>
             </div>
             <section class="scarMarkPhysicalFeature" ng-repeat="smpf in csaw.scarMarkPhysicalFeatures track by $index">

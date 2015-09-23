@@ -59,7 +59,7 @@
                 <div class="col-sm-4 form-group">
                   <div class="sharedCol4">
                       <label>SSN: </label>
-                      <input type="text" class="form-control"  ng-model="ssn.value" />
+                      <input type="text" class="form-control"  ng-model="child.person.ssns[$index].value" />
                     </div>
                     <div >
                       <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(child.person.ssns, $index)"></a></span>
@@ -73,7 +73,7 @@
                 <div class="col-sm-4 form-group">
                      <div class="sharedCol4">
                       <label>Birthday: </label>
-                      <input type="text" class="form-control" ng-model="bday.value" datepicker />
+                      <input type="text" class="form-control" ng-model="child.person.birthDates[$index].value" datepicker />
                     </div>
                      <div >
                         <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(child.person.birthDates, $index)"></a></span>
@@ -86,7 +86,7 @@
                 <div class="col-sm-4 form-group">
                    <div class="sharedCol4">
                       <label>Email: </label>
-                      <input type="text" class="form-control" ng-model="email.value" />
+                      <input type="text" class="form-control" ng-model="child.emails[$index].value" />
                     </div>
                      <div >
                         <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(child.emails, $index)"></a></span>
@@ -99,7 +99,7 @@
                 <div class="col-sm-4 form-group">
                   <div class="sharedCol4">
                     <label>Cell Phone: </label>
-                    <input type="text" class="form-control" ng-model="cellphone.value" />
+                    <input type="text" class="form-control" ng-model="child.person.cellPhones[$index].value" />
                   </div>
                   <div >
                         <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(child.person.cellPhones, $index)"></a></span>
@@ -233,7 +233,7 @@
                 <div class="col-sm-4 form-group" >
                   <div class="sharedCol4">
                     <label>Select a Date: </label>
-                    <input type="text" class="form-control" ng-model="date.value" datepicker/>
+                    <input type="text" class="form-control" ng-model="child.missingDates[$index].value" datepicker/>
                   </div>
                    <div >
                         <span class="remove-btn" ng-show="$index >0"><a href="" ng-click="removeFromList(child.missingDates, $index)"></a></span>
